@@ -1,0 +1,10 @@
+{
+  "name": "Jeffrey_Luong_Portfolio",
+  "short_name": "Jeffrey_Luong_Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff",
+  "theme_color": "#673ab8",
+  "icons": []
+}
