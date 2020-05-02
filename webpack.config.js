@@ -6,29 +6,8 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.join(__dirname, 'static/build'),
-    filename: 'app.js',
-    publicPath: "/static/build"
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-      }, {
-        test: /\.s(a|c)ss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              modules: true
-            }
-          },
-          'sass-loader',
-        ],
-      }
-    ]
+    filename: '[name].js',
+    publicPath: '/static/build'
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -37,6 +16,23 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.js', '.scss']
+    extensions: ['.js', '.css', '.scss']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }, {
+        test: /\.((sc|c)ss)$/i,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { modules: true } },
+          'sass-loader'
+        ]
+      }
+    ]
   }
 };
