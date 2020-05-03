@@ -1,0 +1,18 @@
+@import '../../styles/mixins';
+
+.Home {
+  background-color: #4D84A6;
+  height: 100vh;
+  position: relative;
+
+  .HomeHeroContainer {
+    @include transform(translate(-50%, -50%));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  h1 {
+    color: white;
+  }
+}

@@ -28,6 +28,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-css-modules-transform": "^1.6.2",
+    "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "css-loader": "^3.5.3",
     "enzyme": "^3.10.0",
     "enzyme-adapter-preact-pure": "^2.0.0",
@@ -48,9 +49,11 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "imports-loader": "^0.8.0",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
-    "preact-router": "^3.2.1"
+    "preact-router": "^3.2.1",
+    "snapsvg": "^0.5.1"
   },
   "jest": {
     "preset": "jest-preset-preact",

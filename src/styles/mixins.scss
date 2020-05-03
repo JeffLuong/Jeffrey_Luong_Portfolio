@@ -1,0 +1,11 @@
+$prefix:'-moz-', '-webkit-', '-o-', '-ms-', '';
+
+@mixin prependPrefixes($attr, $styles) {
+  @each $p in $prefix {
+    #{$p}#{$attr}: $styles;
+  }
+}
+
+@mixin transform($styles) {
+  @include prependPrefixes(transform, $styles);
+}
