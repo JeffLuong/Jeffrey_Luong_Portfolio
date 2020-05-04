@@ -14,15 +14,13 @@ app.use('/static', express.static(path.join(__dirname, '../static')));
 
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   const { url } = req;
-  // Pass SSR history into app as props so the router can match the correct path.
-  const history = { location: { pathname: url } };
   const title = hasPageTitle(url) ? UrlTitleMap[url] : DefaultTitle;
   const canonicalUrl = `https://www.jeffreyluong.com${url}`;
 
   res.send(
     BaseTemplate(
       { title, canonicalUrl },
-      render(h(App, { url, history }))
+      render(h(App, { url }))
     )
   );
 });

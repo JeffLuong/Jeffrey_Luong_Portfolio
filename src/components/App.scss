@@ -1,7 +1,19 @@
+@import '../styles/colors';
+@import '../styles/mixins';
+
 .AppInnerWrapper {
 
 }
 
 .Main {
+  @include transition(.25s background-color ease-in-out);
+  height: 100vh;
 
+  &.isHomePage {
+    background: linear-gradient(240deg, rgba(9,47,121,1) 0%, rgba(5,116,188,1) 74%, rgba(0,184,255,1) 100%);
+  }
+
+  &.isAboutPage {
+    background-color: $secondary-theme-color;
+  }
 }

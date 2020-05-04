@@ -9,3 +9,11 @@ $prefix:'-moz-', '-webkit-', '-o-', '-ms-', '';
 @mixin transform($styles) {
   @include prependPrefixes(transform, $styles);
 }
+
+@mixin transition($styles...) {
+  @include prependPrefixes(transition, $styles);
+}
+
+@mixin transformOrigin($position) {
+  @include prependPrefixes(transform-origin, $position);
+}

@@ -1,0 +1,18 @@
+@import '../../styles/mixins';
+
+@keyframes scaleRight {
+  0% {
+    @include transform(scaleX(0));
+  }
+  100% {
+    @include transform(scaleX(1));
+  }
+}
+
+.AnimatedLine {
+  @include transform(scaleX(0));
+  @include transformOrigin(left);
+  animation: scaleRight .5s forwards;
+  background-color: #00a3ff;
+  height: .5rem;
+}
