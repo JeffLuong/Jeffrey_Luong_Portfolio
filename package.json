@@ -6,7 +6,7 @@
   "scripts": {
     "build:server": "babel server --copy-files --out-dir ./static/build/server && babel src --copy-files --out-dir ./static/build/src",
     "build:client": "webpack --config webpack.prod.config.js",
-    "build": "npm run build:client & npm run build:server",
+    "build:prod": "npm run build:client & npm run build:server",
     "start": "NODE_ENV=COMPILED node ./static/build/server/index.js",
     "dev": "npm run dev:client & npm run dev:server",
     "dev:client": "webpack -w",
