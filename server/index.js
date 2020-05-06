@@ -12,7 +12,7 @@ import { DefaultTitle, hasPageTitle, UrlMap } from '../src/utils/constants';
 const app = express();
 const PORT = process.env.PORT || 4000;
 const cache = new NodeCache({ stdTTL: 300 }); // 5 mins TTL
-const staticDir = process.env.NODE_ENV === 'COMPILED' ?
+const staticDir = process.env.NODE_COMPILED === 'COMPILED' ?
   path.join(__dirname, '../../') :
   path.join(__dirname, '../static');
 
