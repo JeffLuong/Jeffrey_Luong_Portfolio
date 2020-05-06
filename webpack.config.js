@@ -3,8 +3,8 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
-  mode: 'production',
+  entry: path.join(__dirname, 'src', 'index.js'),
+  mode: 'development',
   output: {
     path: path.join(__dirname, 'static', 'build'),
     filename: 'app.js',

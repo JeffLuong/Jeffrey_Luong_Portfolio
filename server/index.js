@@ -12,9 +12,12 @@ import { DefaultTitle, hasPageTitle, UrlMap } from '../src/utils/constants';
 const app = express();
 const PORT = process.env.PORT || 4000;
 const cache = new NodeCache({ stdTTL: 300 }); // 5 mins TTL
+const staticDir = process.env.NODE_ENV === 'COMPILED' ?
+  path.join(__dirname, '../../') :
+  path.join(__dirname, '../static');
 
 app.use(compression());
-app.use('/static', express.static(path.join(__dirname, '../static')));
+app.use('/static', express.static(staticDir));
 
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   const { url } = req;
