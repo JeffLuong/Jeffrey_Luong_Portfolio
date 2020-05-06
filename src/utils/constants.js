@@ -74,22 +74,22 @@ export const SocialLinks = [
 
 export const Photos = [
   ['Film', [
-    '/static/img/photography/film/thumbs/NYalley-thumb.jpg',
-    '/static/img/photography/film/thumbs/Flatiron-thumb.jpg',
-    '/static/img/photography/film/thumbs/Venice-thumb.jpg',
-    '/static/img/photography/film/thumbs/StPeter-thumb.jpg',
-    '/static/img/photography/film/thumbs/Bernini-thumb.jpg',
-    '/static/img/photography/film/thumbs/Isabel-thumb.jpg',
+    '/static/img/photography/film/NYalley-thumb.jpg',
+    '/static/img/photography/film/Flatiron-thumb.jpg',
+    '/static/img/photography/film/Venice-thumb.jpg',
+    '/static/img/photography/film/StPeter-thumb.jpg',
+    '/static/img/photography/film/Bernini-thumb.jpg',
+    '/static/img/photography/film/Isabel-thumb.jpg',
   ]],
   ['Digital', [
-    '/static/img/photography/experimental/thumbs/Jeff-thumb.jpg',
-    '/static/img/photography/experimental/thumbs/Doro-thumb.jpg',
-    '/static/img/photography/experimental/thumbs/Michael-thumb.jpg',
-    '/static/img/photography/experimental/thumbs/Isabel-thumb.jpg',
-    '/static/img/photography/experimental/thumbs/DrawingHands-thumb.jpg',
-    '/static/img/photography/experimental/thumbs/Ponzu-thumb.jpg',
-    '/static/img/photography/experimental/thumbs/Spheres-thumb.jpg',
-    '/static/img/photography/experimental/thumbs/VicenzaCathedral-thumb.jpg',
-    '/static/img/photography/experimental/thumbs/Windmills-thumb.jpg'
+    '/static/img/photography/experimental/Jeff-thumb.jpg',
+    '/static/img/photography/experimental/Doro-thumb.jpg',
+    '/static/img/photography/experimental/Michael-thumb.jpg',
+    '/static/img/photography/experimental/Isabel-thumb.jpg',
+    '/static/img/photography/experimental/DrawingHands-thumb.jpg',
+    '/static/img/photography/experimental/Ponzu-thumb.jpg',
+    '/static/img/photography/experimental/Spheres-thumb.jpg',
+    '/static/img/photography/experimental/VicenzaCathedral-thumb.jpg',
+    '/static/img/photography/experimental/Windmills-thumb.jpg'
   ]]
 ];
