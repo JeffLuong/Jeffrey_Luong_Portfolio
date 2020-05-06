@@ -1,13 +1,18 @@
 import { h } from 'preact';
 import { Link } from 'preact-router/match';
+import cx from 'classnames';
 
 import * as styles from './Navigation.scss';
+import { UrlMap } from '../../utils/constants';
 
-const Navigation = () => (
-  <header className={styles.NavHeader}>
+const Navigation = ({ goDark }) => (
+  <header className={cx(styles.NavHeader, { [styles.isDark]: goDark })}>
     <nav>
-      <Link activeClassName={styles.active} href="/about">About</Link>
-      <Link activeClassName={styles.active} href="/work">Work</Link>
+      {Object.keys(UrlMap).filter(p => p !== '/').map(path => (
+        <Link activeClassName={styles.active} href={path}>
+          {UrlMap[path].name}
+        </Link>
+      ))}
     </nav>
   </header>
 );

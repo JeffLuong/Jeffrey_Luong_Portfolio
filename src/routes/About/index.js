@@ -1,9 +1,9 @@
 import { h } from 'preact';
 import DocumentHead from '../../components/DocumentHead';
-import { UrlTitleMap, BaseUrl } from '../../utils/constants';
+import { UrlMap, BaseUrl } from '../../utils/constants';
 
 const About = ({ path }) => (
-  <DocumentHead title={UrlTitleMap[path]} canonicalUrl={`${BaseUrl}${path}`}>
+  <DocumentHead title={UrlMap[path].title} canonicalUrl={`${BaseUrl}${path}`}>
     <div>
       <p>
         I am a Front End / UI Engineer with a passion for design and user interactivity.

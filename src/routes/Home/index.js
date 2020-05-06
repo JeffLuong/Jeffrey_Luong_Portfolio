@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useEffect, useRef } from 'preact/hooks';
 import DocumentHead from '../../components/DocumentHead';
-import { UrlTitleMap, BaseUrl } from '../../utils/constants';
+import { UrlMap, BaseUrl } from '../../utils/constants';
 import * as styles from './Home.scss';
 import useSnap from '../../hooks/useSnap';
 import AnimatedText from '../../components/AnimatedText';
@@ -18,7 +18,7 @@ const Home = ({ path }) => {
   }, [setupSvg]);
 
   return (
-    <DocumentHead title={UrlTitleMap[path]} canonicalUrl={`${BaseUrl}${path}`}>
+    <DocumentHead title={UrlMap[path].title} canonicalUrl={`${BaseUrl}${path}`}>
       <section className={styles.Home}>
         <div className={styles.HomeHeroContainer}>
           <AnimatedText TagName="h1" className={styles.HeroText} delay={450}>
