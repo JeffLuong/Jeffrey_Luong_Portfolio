@@ -17,7 +17,7 @@ export const UrlMap = {
   },
   '/photography': {
     title: `${DefaultTitle} | Photography`,
-    name: 'Photography'
+    name: 'Lens'
   }
 };
 

@@ -8,11 +8,16 @@ import { UrlMap } from '../../utils/constants';
 const Navigation = ({ goDark }) => (
   <header className={cx(styles.NavHeader, { [styles.isDark]: goDark })}>
     <nav>
-      {Object.keys(UrlMap).filter(p => p !== '/').map(path => (
-        <Link activeClassName={styles.active} href={path}>
-          {UrlMap[path].name}
-        </Link>
-      ))}
+      <Link className={styles.HomeLink} href="/">Jeff</Link>
+      <ul>
+        {Object.keys(UrlMap).filter(p => p !== '/').map(path => (
+          <li>
+            <Link activeClassName={styles.active} href={path}>
+              {UrlMap[path].name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   </header>
 );
