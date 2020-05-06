@@ -64,3 +64,10 @@ export const FeaturedWork = [
     url: 'http://jeffluong.github.io/PROJECT_01_Jack/'
   }
 ];
+
+export const SocialLinks = [
+  ['Github', 'https://www.github.com/JeffLuong'],
+  ['Codepen', 'https://www.codepen.io/jluong/'],
+  ['LinkedIn', 'https://www.linkedin.com/in/jeffreyluong'],
+  ['Instagram', 'https://instagram.com/jeffluong/']
+]

@@ -15,12 +15,10 @@ import * as styles from './App.scss';
 
 const getRouteClass = path => {
   switch (path) {
-    case '/about':
-      return styles.isAboutPage;
-    case '/work':
-      return styles.isWorkPage;
-    default:
+    case '/':
       return styles.isHomePage;
+    default:
+      return styles.isAnyPage;
   }
 };
 

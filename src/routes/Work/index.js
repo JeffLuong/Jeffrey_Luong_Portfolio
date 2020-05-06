@@ -9,9 +9,9 @@ import FlexContainer from '../../components/FlexContainer';
 import useCachedHandlers from '../../hooks/useCachedHandlers';
 import Drawer from '../../components/Drawer';
 import Lightning from '../../components/Svg/Lightning';
+import { ButtonLink } from '../../components/Button';
 
 import * as styles from './Work.scss';
-import { ButtonLink } from '../../components/Button';
 
 const Work = ({ path }) => {
   const [work, setCurrWork] = useState('');

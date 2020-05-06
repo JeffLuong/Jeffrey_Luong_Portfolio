@@ -50,6 +50,26 @@
         @include transform(scaleX(1));
       }
     }
+
+    @media (max-width: 1000px) {
+      max-width: 640px;
+    }
+  
+    @media (max-width: 768px) {
+      max-width: 520px
+    }
+  
+    @media (max-width: 640px) {
+      max-width: 420px;
+
+      a {
+        margin: 0 .5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      max-width: 300px
+    }
   }
 
   &.isDark {

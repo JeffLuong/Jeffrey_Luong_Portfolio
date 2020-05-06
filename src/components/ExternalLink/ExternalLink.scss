@@ -1,0 +1,11 @@
+@import '../../styles/mixins';
+
+.ExternalLink {
+  @include transition(color .125s ease-in-out);
+  color: #0574bc;
+  font-weight: 600;
+
+  &:hover {
+    color: #1d81c2;
+  }
+}
