@@ -17,6 +17,7 @@
   overflow: hidden;
   width: 250px;
   height: 250px;
+  margin: 1rem;
 
   &.isClickable {
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
@@ -62,5 +63,9 @@
 
   &:nth-of-type(6) {
     animation-delay: .25s;
+  }
+
+  .Tile {
+    margin: 0;
   }
 }

@@ -71,3 +71,25 @@ export const SocialLinks = [
   ['LinkedIn', 'https://www.linkedin.com/in/jeffreyluong'],
   ['Instagram', 'https://instagram.com/jeffluong/']
 ]
+
+export const Photos = [
+  ['Film', [
+    '/static/img/photography/film/thumbs/NYalley-thumb.jpg',
+    '/static/img/photography/film/thumbs/Flatiron-thumb.jpg',
+    '/static/img/photography/film/thumbs/Venice-thumb.jpg',
+    '/static/img/photography/film/thumbs/StPeter-thumb.jpg',
+    '/static/img/photography/film/thumbs/Bernini-thumb.jpg',
+    '/static/img/photography/film/thumbs/Isabel-thumb.jpg',
+  ]],
+  ['Digital', [
+    '/static/img/photography/experimental/thumbs/Jeff-thumb.jpg',
+    '/static/img/photography/experimental/thumbs/Doro-thumb.jpg',
+    '/static/img/photography/experimental/thumbs/Michael-thumb.jpg',
+    '/static/img/photography/experimental/thumbs/Isabel-thumb.jpg',
+    '/static/img/photography/experimental/thumbs/DrawingHands-thumb.jpg',
+    '/static/img/photography/experimental/thumbs/Ponzu-thumb.jpg',
+    '/static/img/photography/experimental/thumbs/Spheres-thumb.jpg',
+    '/static/img/photography/experimental/thumbs/VicenzaCathedral-thumb.jpg',
+    '/static/img/photography/experimental/thumbs/Windmills-thumb.jpg'
+  ]]
+];

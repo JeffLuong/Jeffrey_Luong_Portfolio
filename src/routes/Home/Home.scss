@@ -1,11 +1,12 @@
 @import '../../styles/mixins';
+@import '../../styles/variables';
 
 .Home {
-  height: 100%;
+  height: calc(100vh - #{$header-ht});
   position: relative;
 
   .HomeHeroContainer {
-    @include transform(translate(-50%, -50%));
+    @include transform(translate(-50%, -75%));
     position: absolute;
     top: 50%;
     left: 50%;

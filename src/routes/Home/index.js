@@ -4,12 +4,13 @@ import DocumentHead from '../../components/DocumentHead';
 import { UrlMap, BaseUrl } from '../../utils/constants';
 import AnimatedText from '../../components/AnimatedText';
 import AnimatedLine from '../../components/AnimatedLine';
+import Section from '../../components/Section';
 
 import * as styles from './Home.scss';
 
 const Home = ({ path }) => (
   <DocumentHead title={UrlMap[path].title} canonicalUrl={`${BaseUrl}${path}`}>
-    <section className={styles.Home}>
+    <Section className={styles.Home}>
       <div className={styles.HomeHeroContainer}>
         <AnimatedText TagName="h1" className={styles.HeroText} delay={450}>
           Hi, my name is Jeff
@@ -19,7 +20,7 @@ const Home = ({ path }) => (
           Front End / UI Engineer
         </AnimatedText>
       </div>
-    </section>
+    </Section>
   </DocumentHead>
 );
 

@@ -3,14 +3,14 @@ import { useState } from 'preact/hooks';
 import { Router, getCurrentUrl } from 'preact-router';
 import cx from 'classnames';
 
-import Navigation from './Navigation';
-
 import Home from '../routes/Home';
 import About from '../routes/About';
 import NotFound from '../routes/NotFound';
 import Work from '../routes/Work';
 import Photography from '../routes/Photography';
 
+import Navigation from './Navigation';
+import Footer from './Footer';
 import * as styles from './App.scss';
 
 const getRouteClass = path => {
@@ -40,6 +40,9 @@ const App = props => {
           <NotFound default />
         </Router>
       </main>
+      {path !== '/' &&
+        <Footer />
+      }
     </div>
   );
 };

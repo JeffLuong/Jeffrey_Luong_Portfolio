@@ -1,6 +1,7 @@
+@import '../../styles/mixins';
+
 .WorkHeader {
-  visibility: hidden;
-  margin: 0;
+  @include accessibilityHide();
 }
 
 .BtnBg {
