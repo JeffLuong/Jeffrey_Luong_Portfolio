@@ -20,6 +20,7 @@ app.use(compression());
 app.use('/static', express.static(staticDir));
 
 app.use((req, res, next) => {
+  console.log('SECURE---', req.secure);
   if (req.secure) {
     next();
   } else {

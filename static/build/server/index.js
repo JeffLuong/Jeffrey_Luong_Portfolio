@@ -30,6 +30,8 @@ var staticDir = process.env.NODE_COMPILED === 'COMPILED' ? _path.default.join(__
 app.use((0, _compression.default)());
 app.use('/static', _express.default.static(staticDir));
 app.use((req, res, next) => {
+  console.log('SECURE---', req.secure);
+
   if (req.secure) {
     next();
   } else {
