@@ -20,20 +20,19 @@ app.use(compression());
 app.use('/static', express.static(staticDir));
 
 app.use((req, res, next) => {
-  console.log('SECURE---', req.secure);
-  console.log('PROTOCOL----', req.protocol);
-  console.log('REQUEST-----', req.headers['x-forwarded-proto']);
+  console.log('REQUEST FORWARDED PROTO-----', req.headers['x-forwarded-proto']);
   if (req.headers['x-forwarded-proto'] === 'https') {
     next();
   } else {
-    console.log(`https://${req.headers.host}${req.url}`);
-    next();
-    // res.redirect(301, `https://${req.headers.host}${req.url}`);
+    const url = `https://${req.headers.host}${req.url}`;
+    console.log(`Redirecting to.......  ${url}`);
+    res.redirect(301, url);
   }
 });
 
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   const { url } = req;
+  console.log(`Final requested URL......... ${url}`);
   let page = cache.get(url);
 
   if (!page) {

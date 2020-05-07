@@ -30,21 +30,21 @@ var staticDir = process.env.NODE_COMPILED === 'COMPILED' ? _path.default.join(__
 app.use((0, _compression.default)());
 app.use('/static', _express.default.static(staticDir));
 app.use((req, res, next) => {
-  console.log('SECURE---', req.secure);
-  console.log('PROTOCOL----', req.protocol);
-  console.log('REQUEST-----', req.headers['x-forwarded-proto']);
+  console.log('REQUEST FORWARDED PROTO-----', req.headers['x-forwarded-proto']);
 
   if (req.headers['x-forwarded-proto'] === 'https') {
     next();
   } else {
-    console.log("https://".concat(req.headers.host).concat(req.url));
-    next(); // res.redirect(301, `https://${req.headers.host}${req.url}`);
+    var url = "https://".concat(req.headers.host).concat(req.url);
+    console.log("Redirecting to.......  ".concat(url));
+    res.redirect(301, url);
   }
 });
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   var {
     url
   } = req;
+  console.log("Final requested URL......... ".concat(url));
   var page = cache.get(url);
 
   if (!page) {
