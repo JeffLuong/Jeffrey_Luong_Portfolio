@@ -31,6 +31,8 @@ app.use((0, _compression.default)());
 app.use('/static', _express.default.static(staticDir));
 app.use((req, res, next) => {
   console.log('SECURE---', req.secure);
+  console.log('PROTOCOL----', req.protocol);
+  console.log('REQUEST-----', req);
 
   if (req.secure) {
     next();
