@@ -19,6 +19,16 @@ const staticDir = process.env.NODE_COMPILED === 'COMPILED' ?
 app.use(compression());
 app.use('/static', express.static(staticDir));
 
+app.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    console.log(`https://${req.headers.host}${req.url}`);
+    next();
+    // res.redirect(301, `https://${req.headers.host}${req.url}`);
+  }
+});
+
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   const { url } = req;
   let page = cache.get(url);
