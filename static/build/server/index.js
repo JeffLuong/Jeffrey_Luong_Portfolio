@@ -32,9 +32,9 @@ app.use('/static', _express.default.static(staticDir));
 app.use((req, res, next) => {
   console.log('SECURE---', req.secure);
   console.log('PROTOCOL----', req.protocol);
-  console.log('REQUEST-----', req);
+  console.log('REQUEST-----', req.headers['x-forwarded-proto']);
 
-  if (req.secure) {
+  if (req.headers['x-forwarded-proto'] === 'https') {
     next();
   } else {
     console.log("https://".concat(req.headers.host).concat(req.url));

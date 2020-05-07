@@ -22,8 +22,8 @@ app.use('/static', express.static(staticDir));
 app.use((req, res, next) => {
   console.log('SECURE---', req.secure);
   console.log('PROTOCOL----', req.protocol);
-  console.log('REQUEST-----', req);
-  if (req.secure) {
+  console.log('REQUEST-----', req.headers['x-forwarded-proto']);
+  if (req.headers['x-forwarded-proto'] === 'https') {
     next();
   } else {
     console.log(`https://${req.headers.host}${req.url}`);
