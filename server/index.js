@@ -1,5 +1,4 @@
 import express from 'express';
-import url from 'url'
 import compression from 'compression';
 import NodeCache from 'node-cache';
 import path from 'path';
@@ -8,7 +7,7 @@ import { h } from 'preact';
 import BaseTemplate from './base-template';
 
 import App from '../src/components/App';
-import { DefaultTitle, hasPageTitle, UrlMap, BaseUrl } from '../src/utils/constants';
+import { DefaultTitle, hasPageTitle, UrlMap } from '../src/utils/constants';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -19,14 +18,6 @@ const staticDir = process.env.NODE_COMPILED === 'COMPILED' ?
 
 app.use(compression());
 app.use('/static', express.static(staticDir));
-
-app.use((req, res, next) => {
-  if (req.protocol.includes('https')) {
-    next();
-  } else {
-    res.redirect(301, `${BaseUrl}${req.originalUrl}`);
-  }
-});
 
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   const { url } = req;

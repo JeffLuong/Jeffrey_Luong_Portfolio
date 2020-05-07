@@ -2,8 +2,6 @@
 
 var _express = _interopRequireDefault(require("express"));
 
-var _url = _interopRequireDefault(require("url"));
-
 var _compression = _interopRequireDefault(require("compression"));
 
 var _nodeCache = _interopRequireDefault(require("node-cache"));
@@ -31,13 +29,6 @@ var cache = new _nodeCache.default({
 var staticDir = process.env.NODE_COMPILED === 'COMPILED' ? _path.default.join(__dirname, '../../') : _path.default.join(__dirname, '../static');
 app.use((0, _compression.default)());
 app.use('/static', _express.default.static(staticDir));
-app.use((req, res, next) => {
-  if (req.protocol.includes('https')) {
-    next();
-  } else {
-    res.redirect(301, "".concat(_constants.BaseUrl).concat(req.originalUrl));
-  }
-});
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   var {
     url
