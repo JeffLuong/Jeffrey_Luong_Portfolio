@@ -20,19 +20,17 @@ app.use(compression());
 app.use('/static', express.static(staticDir));
 
 app.use((req, res, next) => {
-  console.log('REQUEST FORWARDED PROTO-----', req.headers['x-forwarded-proto']);
+  // Using `x-forwarded-proto` because under the hood, Heroku router (over)writes the X-Forwarded-Proto
+  // and the X-Forwarded-Port request headers: https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls
   if (req.headers['x-forwarded-proto'] === 'https') {
     next();
   } else {
-    const url = `https://${req.headers.host}${req.url}`;
-    console.log(`Redirecting to.......  ${url}`);
-    res.redirect(301, url);
+    res.redirect(301, `https://${req.headers.host}${req.url}`);
   }
 });
 
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   const { url } = req;
-  console.log(`Final requested URL......... ${url}`);
   let page = cache.get(url);
 
   if (!page) {
