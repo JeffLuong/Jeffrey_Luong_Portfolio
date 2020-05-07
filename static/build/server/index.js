@@ -29,6 +29,13 @@ var cache = new _nodeCache.default({
 var staticDir = process.env.NODE_COMPILED === 'COMPILED' ? _path.default.join(__dirname, '../../') : _path.default.join(__dirname, '../static');
 app.use((0, _compression.default)());
 app.use('/static', _express.default.static(staticDir));
+app.use((req, res, next) => {
+  if (req.secure) {
+    next();
+  } else {
+    res.redirect(301, "https://".concat(req.headers.host).concat(req.url));
+  }
+});
 app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
   var {
     url
