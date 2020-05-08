@@ -1,7 +1,7 @@
 import { h } from 'preact';
 
 import DocumentHead from '../../components/DocumentHead';
-import { UrlMap, BaseUrl } from '../../utils/constants';
+import { UrlMap, BaseUrl } from '../../data';
 import AnimatedText from '../../components/AnimatedText';
 import AnimatedLine from '../../components/AnimatedLine';
 import Section from '../../components/Section';

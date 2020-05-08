@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import DocumentHead from '../../components/DocumentHead';
-import { DefaultTitle, BaseUrl } from '../../utils/constants';
+import { DefaultTitle, BaseUrl } from '../../data';
 
 const NotFound = ({ url }) => (
   <DocumentHead title={`${DefaultTitle} | Not Found`} canonicalUrl={`${BaseUrl}${url}`}>

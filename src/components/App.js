@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState, useEffect } from 'preact/hooks';
 import { Router, getCurrentUrl } from 'preact-router';
 import cx from 'classnames';
 
@@ -8,6 +8,7 @@ import About from '../routes/About';
 import NotFound from '../routes/NotFound';
 import Work from '../routes/Work';
 import Photography from '../routes/Photography';
+import usePageViewTracker from '../hooks/usePageViewTracker';
 
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -25,8 +26,19 @@ const getRouteClass = path => {
 const App = props => {
   // For SSR, `url` is a prop that is passed into <App>
   const path = global.window ? getCurrentUrl() : props.url;
+  const [statePath, setStatePath] = useState(path);
   const [bgClass, setBgClass] = useState(getRouteClass(path));
-  const animate = async e => setBgClass(getRouteClass(e.url));
+  const pageTracker = usePageViewTracker();
+  const animate = async e => {
+    setStatePath(e.url);
+    setBgClass(getRouteClass(e.url));
+  };
+
+  useEffect(() => {
+    if (pageTracker) {
+      pageTracker(statePath);
+    }
+  }, [statePath]);
 
   return (
     <div className={cx(styles.AppInnerWrapper, bgClass)}>

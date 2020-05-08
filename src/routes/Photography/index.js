@@ -3,7 +3,7 @@ import { h, Fragment } from 'preact';
 import Section from '../../components/Section';
 import DocumentHead from '../../components/DocumentHead';
 import FlexContainer from '../../components/FlexContainer';
-import { BaseUrl, Photos, UrlMap } from '../../utils/constants';
+import { BaseUrl, Photos, UrlMap } from '../../data';
 import Tile from '../../components/Tile';
 
 import * as styles from './Photography.scss';

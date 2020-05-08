@@ -2,7 +2,7 @@ import { h } from 'preact';
 import { useState } from 'preact/hooks';
 
 import DocumentHead from '../../components/DocumentHead';
-import { BaseUrl, UrlMap, FeaturedWork } from '../../utils/constants';
+import { BaseUrl, UrlMap, FeaturedWork } from '../../data';
 import Tile, { TileTrigger } from '../../components/Tile';
 import Section from '../../components/Section';
 import FlexContainer from '../../components/FlexContainer';

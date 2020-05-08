@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import cx from 'classnames';
 
 import * as styles from './Navigation.scss';
-import { UrlMap } from '../../utils/constants';
+import { UrlMap } from '../../data';
 
 const Navigation = ({ goDark }) => (
   <header className={cx(styles.NavHeader, { [styles.isDark]: goDark })}>

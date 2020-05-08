@@ -7,7 +7,7 @@ import { h } from 'preact';
 import BaseTemplate from './base-template';
 
 import App from '../src/components/App';
-import { DefaultTitle, hasPageTitle, UrlMap } from '../src/utils/constants';
+import { DefaultTitle, hasPageTitle, UrlMap } from '../src/data';
 
 const app = express();
 const PORT = process.env.PORT || 4000;

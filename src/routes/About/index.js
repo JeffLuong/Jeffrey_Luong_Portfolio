@@ -1,7 +1,7 @@
 import { h } from 'preact';
 
 import DocumentHead from '../../components/DocumentHead';
-import { UrlMap, BaseUrl, SocialLinks } from '../../utils/constants';
+import { UrlMap, BaseUrl, SocialLinks } from '../../data';
 import Head from '../../components/Svg/Head';
 import Section from '../../components/Section';
 import FlexContainer from '../../components/FlexContainer';
