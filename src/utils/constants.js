@@ -41,7 +41,7 @@ export const FeaturedWork = [
   }, {
     name: 'Isabel Chen Fashion',
     img: '/static/img/work/isabelchen.jpg',
-    description: 'Portfolio website for fashion designer Isabel QZ Chen. Worked with client to layout and interaction designs.',
+    description: 'Portfolio website for fashion designer Isabel QZ Chen. Worked with client on layout and interaction designs.',
     tech: ['Javascript', 'JQuery', 'Node.js', 'Express', 'HTML5/CSS3'],
     url: 'http://www.isabelqzchen.com/'
   }, {
