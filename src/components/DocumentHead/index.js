@@ -1,6 +1,6 @@
 import { Fragment, h } from 'preact';
 
-const DocumentHead = ({ title, canonicalUrl, children }) => {
+const DocumentHead = ({ title, description, canonicalUrl, children }) => {
   const { document } = global;
   if (document) {
     document.title = title;
@@ -10,6 +10,12 @@ const DocumentHead = ({ title, canonicalUrl, children }) => {
       link.setAttribute('rel', 'canonical');
     }
     link.setAttribute('href', canonicalUrl);
+
+    const meta = document.querySelector('meta[name="description"]') || document.createElement('meta');
+    if (!meta.hasAttribute('name')) {
+      meta.setAttribute('name', 'description');
+    }
+    meta.setAttribute('content', description);
   }
   return <Fragment>{children}</Fragment>;
 };

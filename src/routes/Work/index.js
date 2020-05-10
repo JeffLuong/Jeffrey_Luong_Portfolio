@@ -23,7 +23,7 @@ const Work = ({ path }) => {
   });
 
   return (
-    <DocumentHead title={UrlMap[path].title} canonicalUrl={`${BaseUrl}${path}`}>
+    <DocumentHead title={UrlMap[path].title} description={UrlMap[path].description} canonicalUrl={`${BaseUrl}${path}`}>
       <Section>
         <article>
           <h1 className={styles.WorkHeader}>Selected Works</h1>

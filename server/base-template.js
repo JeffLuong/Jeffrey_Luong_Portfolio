@@ -1,5 +1,5 @@
 export default function(meta, content) {
-  const { title, canonicalUrl } = meta;
+  const { title, description, canonicalUrl } = meta;
   return `
     <!DOCTYPE html>
     <html>
@@ -7,6 +7,7 @@ export default function(meta, content) {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#0574bc">
+        <meta name="description" content="${description}">
         <title>${title}</title>
         <link rel="preload" as="style" type="text/css" href="/static/build/main.css">
         <link rel="preload" as="script" type="text/javascript" href="/static/build/app.js">

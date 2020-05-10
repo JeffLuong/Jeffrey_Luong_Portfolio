@@ -9,7 +9,7 @@ import Section from '../../components/Section';
 import * as styles from './Home.scss';
 
 const Home = ({ path }) => (
-  <DocumentHead title={UrlMap[path].title} canonicalUrl={`${BaseUrl}${path}`}>
+  <DocumentHead title={UrlMap[path].title} description={UrlMap[path].description} canonicalUrl={`${BaseUrl}${path}`}>
     <Section className={styles.Home}>
       <div className={styles.HomeHeroContainer}>
         <AnimatedText TagName="h1" className={styles.HeroText} delay={450}>

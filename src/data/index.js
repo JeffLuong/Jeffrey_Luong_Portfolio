@@ -5,19 +5,23 @@ export const BaseUrl = 'https://www.jeffreyluong.com';
 export const UrlMap = {
   '/': {
     title: DefaultTitle,
-    name: 'Home'
+    name: 'Home',
+    description: 'Welcome to my portfolio website!'
   },
   '/about': {
     title: `${DefaultTitle} | About`,
-    name: 'About'
+    name: 'About',
+    description: 'A little something about me.'
   },
   '/work': {
     title: `${DefaultTitle} | Work`,
-    name: 'Work'
+    name: 'Work',
+    description: 'Check out some of my work.'
   },
   '/photography': {
     title: `${DefaultTitle} | Photography`,
-    name: 'Lens'
+    name: 'Lens',
+    description: 'Check out some of my photography work.'
   }
 };
 

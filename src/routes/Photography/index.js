@@ -9,7 +9,7 @@ import Tile from '../../components/Tile';
 import * as styles from './Photography.scss';
 
 const Photography = ({ path }) => (
-  <DocumentHead title={UrlMap[path].title} canonicalUrl={`${BaseUrl}${path}`}>
+  <DocumentHead title={UrlMap[path].title} description={UrlMap[path].description} canonicalUrl={`${BaseUrl}${path}`}>
     <Section>
       <FlexContainer>
         {Photos.map(([type, photos]) => (

@@ -10,7 +10,7 @@ import * as styles from './About.scss';
 import ExternalLink from '../../components/ExternalLink';
 
 const About = ({ path }) => (
-  <DocumentHead title={UrlMap[path].title} canonicalUrl={`${BaseUrl}${path}`}>
+  <DocumentHead title={UrlMap[path].title} description={UrlMap[path].description} canonicalUrl={`${BaseUrl}${path}`}>
     <Section>
       <FlexContainer style={{ justifyContent: 'left', margin: '2rem 0 0', alignItems: 'center' }}>
         <div className={styles.AboutDescription}>
