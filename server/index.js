@@ -1,4 +1,5 @@
 import express from 'express';
+import fs from 'fs';
 import compression from 'compression';
 import NodeCache from 'node-cache';
 import path from 'path';
@@ -16,6 +17,8 @@ const staticDir = process.env.NODE_COMPILED === 'COMPILED' ?
   path.join(__dirname, '../../') :
   path.join(__dirname, '../static');
 
+const robotsFile = fs.readFileSync(path.join(staticDir, 'robots.txt')).toString();
+
 app.use(compression());
 app.use('/static', express.static(staticDir));
 
@@ -29,21 +32,28 @@ app.use((req, res, next) => {
   }
 });
 
-app.get(/^\/(?!static|dist(\/|$)).*$/, (req, res) => {
+app.get('/robots.txt', (req, res) => {
+  res.send(robotsFile);
+});
+
+app.get(/^(?!(\/static|\/dist)).+/, (req, res) => {
   const { url } = req;
-  let page = cache.get(url);
 
-  if (!page) {
-    const { title, description } = UrlMap[url];
-    const canonicalUrl = `https://www.jeffreyluong.com${url}`;
-    page = BaseTemplate(
-      { title, description, canonicalUrl },
-      render(h(App, { url }))
-    );
-    cache.set(url, page);
+  if (!url.includes('favicon.ico')) {
+    let page = cache.get(url);
+  
+    if (!page) {
+      const { title, description } = UrlMap[url];
+      const canonicalUrl = `https://www.jeffreyluong.com${url}`;
+      page = BaseTemplate(
+        { title, description, canonicalUrl },
+        render(h(App, { url }))
+      );
+      cache.set(url, page);
+    }
+  
+    res.send(page);
   }
-
-  res.send(page);
 });
 
 app.listen(PORT, () => {
