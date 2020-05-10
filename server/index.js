@@ -22,7 +22,7 @@ app.use('/static', express.static(staticDir));
 app.use((req, res, next) => {
   // Using `x-forwarded-proto` because under the hood, Heroku router (over)writes the X-Forwarded-Proto
   // and the X-Forwarded-Port request headers: https://help.heroku.com/J2R1S4T8/can-heroku-force-an-application-to-use-ssl-tls
-  if (req.headers['x-forwarded-proto'] === 'https') {
+  if (req.headers.host.includes('localhost') || req.headers['x-forwarded-proto'] === 'https') {
     next();
   } else {
     res.redirect(301, `https://${req.headers.host}${req.url}`);
