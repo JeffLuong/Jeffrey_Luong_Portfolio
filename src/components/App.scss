@@ -16,7 +16,7 @@
   flex-direction: column;
 
   &.isHomePage {
-    background-color: #0574bc;
+    background-color: $primary-theme-color;
   }
 
   &.isAnyPage {

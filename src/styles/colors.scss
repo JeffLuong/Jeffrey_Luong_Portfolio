@@ -1,2 +1,7 @@
-$primary-theme-color: #4D84A6;
-$secondary-theme-color: #5e90ae;
+$primary-theme-color: #0574bc;
+$secondary-theme-color: #1d81c2;
+
+:export {
+  primaryTheme: $primary-theme-color;
+  secondaryTheme: $secondary-theme-color;
+}

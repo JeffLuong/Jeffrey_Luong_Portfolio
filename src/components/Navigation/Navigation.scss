@@ -41,7 +41,7 @@
         @include transformOrigin(right);
         content: '';
         display: block;
-        border-bottom: 3px solid #1d81c2;
+        border-bottom: 3px solid $secondary-theme-color;
         width: 100%;
         position: absolute;
         bottom: 0;
@@ -92,8 +92,8 @@
   }
 
   &.isDark {
-    border-bottom: 1px solid #1d81c2;
-    background-color: #0574bc;
+    border-bottom: 1px solid $secondary-theme-color;
+    background-color: $primary-theme-color;
 
     nav a {
       color: #ffffff;
