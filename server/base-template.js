@@ -10,6 +10,7 @@ export default function(meta, content) {
         <title>${title}</title>
         <link rel="preload" as="style" type="text/css" href="/static/build/main.css">
         <link rel="preload" as="script" type="text/javascript" href="/static/build/app.js">
+        <link rel="preconnect" crossorigin href="https://www.google-analytics.com">
         <link rel="canonical" href=${canonicalUrl}>
         <link rel="icon" href="/static/img/favicon.png">
         <link rel="stylesheet" type="text/css" href="/static/build/main.css">
