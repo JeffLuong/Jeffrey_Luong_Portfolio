@@ -1,0 +1,7 @@
+$primary-theme-color: #0574bc;
+$secondary-theme-color: #1d81c2;
+
+:export {
+  primaryTheme: $primary-theme-color;
+  secondaryTheme: $secondary-theme-color;
+}

@@ -1,0 +1,10 @@
+.PhotoGroup {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &:not(:last-of-type) {
+    margin-bottom: 4rem;
+  }
+}
