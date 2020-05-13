@@ -2,7 +2,7 @@ export default function(meta, content) {
   const { title, description, canonicalUrl } = meta;
   return `
     <!DOCTYPE html>
-    <html>
+    <html lang="en-US">
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
