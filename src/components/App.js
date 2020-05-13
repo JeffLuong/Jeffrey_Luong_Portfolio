@@ -35,7 +35,7 @@ const App = props => {
   };
 
   useEffect(() => {
-    if (pageTracker) {
+    if (pageTracker && process.env.NODE_ENV === 'production') {
       pageTracker(statePath);
     }
   }, [statePath]);
