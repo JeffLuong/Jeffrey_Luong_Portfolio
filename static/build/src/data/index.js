@@ -40,7 +40,7 @@ exports.hasPageTitle = hasPageTitle;
 var FeaturedWork = [{
   name: 'Button Website',
   img: '/static/img/work/button.png',
-  description: 'The public facing website for Button. Integrated with various tools and services including <strong>Marketo</strong>, <strong>HubSpot</strong> and <strong>Contentful</strong>. <br/><br/> Animated SVGs using <strong>SnapSvg</strong>. Implemented code-splitting via <strong>Webpack</strong> and <strong>React-loadable</strong>.',
+  description: 'The public facing website for Button. Integrated with various tools and services including <strong>Marketo</strong>, <strong>HubSpot</strong> and <strong>Contentful</strong>. <br><br> Animated SVGs using <strong>SnapSvg</strong>. Implemented code-splitting via <strong>Webpack</strong> and <strong>React-loadable</strong>.',
   tech: ['React', 'Redux', 'Node.js', 'SCSS', 'Webpack', 'Babel'],
   url: 'https://www.usebutton.com'
 }, {
