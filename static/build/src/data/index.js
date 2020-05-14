@@ -3,11 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Interests = exports.Tech = exports.Education = exports.WorkExperience = exports.Photos = exports.SocialLinks = exports.FeaturedWork = exports.hasPageTitle = exports.UrlPaths = exports.UrlMap = exports.BaseUrl = exports.DefaultTitle = void 0;
+exports.Interests = exports.Tech = exports.Education = exports.WorkExperience = exports.Photos = exports.SocialLinks = exports.FeaturedWork = exports.hasPageTitle = exports.UrlPaths = exports.UrlMap = exports.SourceCodeUrl = exports.BaseUrl = exports.DefaultTitle = void 0;
 var DefaultTitle = 'Jeffrey Luong';
 exports.DefaultTitle = DefaultTitle;
 var BaseUrl = 'https://www.jeffreyluong.com';
 exports.BaseUrl = BaseUrl;
+var SourceCodeUrl = 'https://github.com/JeffLuong/Jeffrey_Luong_Portfolio';
+exports.SourceCodeUrl = SourceCodeUrl;
 var UrlMap = {
   '/': {
     title: DefaultTitle,
