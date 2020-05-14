@@ -40,7 +40,7 @@
     padding: 2rem 0 0;
   }
 
-  > h1, > h3, > p, > ul {
+  > h1, > h3, > p, > ul, > .AboutResume {
     @include transform(translateX(-1.5rem));
     opacity: 0;
     animation: fadeText .4s forwards;
@@ -82,5 +82,19 @@
     li {
       margin-right: 1.5rem;
     }
+  }
+
+  .AboutResume {
+    animation-delay: .625s;
+    margin-top: 1rem;
+  }
+}
+
+section .ResumeDrawer {
+  min-width: 40rem;
+  padding: 2rem 0;
+
+  @media (max-width: 640px) {
+    min-width: 100%;
   }
 }

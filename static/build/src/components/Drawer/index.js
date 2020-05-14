@@ -33,6 +33,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Drawer = (_ref) => {
   var {
+    className,
     children,
     onClose
   } = _ref;
@@ -54,7 +55,7 @@ var Drawer = (_ref) => {
     }),
     onClick: onCloseDrawer
   }), (0, _preact.h)("aside", {
-    className: (0, _classnames.default)(styles.Drawer, {
+    className: (0, _classnames.default)(styles.Drawer, className, {
       [styles.animateOpen]: shouldOpen
     })
   }, children, (0, _preact.h)("button", {

@@ -77,7 +77,7 @@ var App = props => {
   }();
 
   (0, _hooks.useEffect)(() => {
-    if (pageTracker) {
+    if (pageTracker && process.env.NODE_ENV === 'production') {
       pageTracker(statePath);
     }
   }, [statePath]);

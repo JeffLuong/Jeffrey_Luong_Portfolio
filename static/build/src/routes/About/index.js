@@ -7,6 +7,8 @@ exports.default = void 0;
 
 var _preact = require("preact");
 
+var _hooks = require("preact/hooks");
+
 var _DocumentHead = _interopRequireDefault(require("../../components/DocumentHead"));
 
 var _data = require("../../data");
@@ -22,12 +24,20 @@ var styles = _interopRequireWildcard({
   "fadeUp": "_37wrl5nKza-Sn8OeOf41O_",
   "AboutDescription": "_3iUDvh60l7o5jk6PX0toMr",
   "fadeText": "_2W476b0zdmRZU3A9A4BaFY",
+  "AboutResume": "_24bV5hGO16CmjAzkk9oA2t",
   "AboutHeader": "_4nbwdV9i0YxmLK9etjgqV",
   "AboutSubHeader": "_3bIdDtb1klCZEhAEnoGLa0",
-  "AboutSocials": "_2t-5sCezmKjveORoSRJfe2"
+  "AboutSocials": "_2t-5sCezmKjveORoSRJfe2",
+  "ResumeDrawer": "_3DaEEqXGFPB_UVNPhWqJ4h"
 });
 
 var _ExternalLink = _interopRequireDefault(require("../../components/ExternalLink"));
+
+var _Drawer = _interopRequireDefault(require("../../components/Drawer"));
+
+var _Button = _interopRequireDefault(require("../../components/Button"));
+
+var _Resume = _interopRequireDefault(require("../../components/Resume"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -39,6 +49,7 @@ var About = (_ref) => {
   var {
     path
   } = _ref;
+  var [isViewingResume, setResumeViewing] = (0, _hooks.useState)(false);
   return (0, _preact.h)(_DocumentHead.default, {
     title: _data.UrlMap[path].title,
     description: _data.UrlMap[path].description,
@@ -46,8 +57,7 @@ var About = (_ref) => {
   }, (0, _preact.h)(_Section.default, null, (0, _preact.h)(_FlexContainer.default, {
     style: {
       justifyContent: 'left',
-      margin: '2rem 0 0',
-      alignItems: 'center'
+      margin: '2rem 0 0'
     }
   }, (0, _preact.h)("div", {
     className: styles.AboutDescription
@@ -66,9 +76,16 @@ var About = (_ref) => {
     return (0, _preact.h)("li", null, (0, _preact.h)(_ExternalLink.default, {
       href: url
     }, name));
-  }))), (0, _preact.h)(_Head.default, {
+  })), (0, _preact.h)("div", {
+    className: styles.AboutResume
+  }, (0, _preact.h)(_Button.default, {
+    onClick: () => setResumeViewing(true)
+  }, "See Resume"))), (0, _preact.h)(_Head.default, {
     className: styles.SvgHead
-  }))));
+  }), isViewingResume && (0, _preact.h)(_Drawer.default, {
+    className: styles.ResumeDrawer,
+    onClose: () => setResumeViewing(false)
+  }, (0, _preact.h)(_Resume.default, null)))));
 };
 
 var _default = About;

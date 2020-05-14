@@ -29,7 +29,8 @@ var _Button = require("../../components/Button");
 
 var styles = _interopRequireWildcard({
   "WorkHeader": "_1ryKWaixUeQVCGa5QaXGIB",
-  "BtnBg": "Lixtra6kmRwIwvgi8o6Am"
+  "BtnBg": "Lixtra6kmRwIwvgi8o6Am",
+  "WorkDrawer": "_31Y5L5Gdg7C36IOY2VzUZ9"
 });
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -74,6 +75,7 @@ var Work = (_ref) => {
       alt: "".concat(name, " Image")
     })));
   })), work && (0, _preact.h)(_Drawer.default, {
+    className: styles.WorkDrawer,
     onClose: () => setCurrWork('')
   }, (0, _preact.h)("h2", {
     style: {

@@ -1,9 +1,11 @@
 @import '../../styles/mixins';
+@import '../../styles/fonts';
 
 .Button {
   @include transition(transform .125s ease-in-out, border .125s ease-in-out);
   background-color: #00a3ff;
   color: white;
+  cursor: pointer;
   padding: .75rem 1rem;
   text-decoration: none;
   display: block;
@@ -12,6 +14,7 @@
   border-radius: 4px;
   display: inline-block;
   font-weight: 600;
+  font-size: $font-small;
   letter-spacing: .5px;
 
   &:hover {
@@ -22,5 +25,9 @@
       @include transform(translateY(3px));
       border-bottom-width: 0;
     }
+  }
+
+  &:focus {
+    outline: none;
   }
 }
