@@ -7,3 +7,14 @@
 .BtnBg {
   background: linear-gradient(125deg, #053676 0%, #241F2E 100%);
 }
+
+.WorkDrawer ul {
+  li {
+    display: flex;
+    align-items: center;
+
+    > svg {
+      margin-right: .5rem;
+    }
+  }
+}

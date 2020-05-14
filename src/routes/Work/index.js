@@ -40,7 +40,7 @@ const Work = ({ path }) => {
             })}
           </FlexContainer>
           {work &&
-            <Drawer onClose={() => setCurrWork('')}>
+            <Drawer className={styles.WorkDrawer} onClose={() => setCurrWork('')}>
               <h2 style={{ color: '#006199' }}>{work.name}</h2>
               <p dangerouslySetInnerHTML={{ __html: work.description }} />
               <h3 style={{ marginTop: '1.5rem' }}>Tech used:</h3>

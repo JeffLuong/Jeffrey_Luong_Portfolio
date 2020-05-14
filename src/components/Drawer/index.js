@@ -5,7 +5,7 @@ import { useEffect, useState } from 'preact/hooks';
 import * as Colors from '../../styles/colors.scss';
 import * as styles from './Drawer.scss';
 
-const Drawer = ({ children, onClose }) => {
+const Drawer = ({ className, children, onClose }) => {
   const [shouldOpen, setShouldOpen] = useState(false);
   const onCloseDrawer = () => {
     setShouldOpen(false);
@@ -19,7 +19,7 @@ const Drawer = ({ children, onClose }) => {
   return (
     <div className={styles.DrawerContainer}>
       <div className={cx(styles.DrawerBg, { [styles.displayBg]: shouldOpen })} onClick={onCloseDrawer} />
-      <aside className={cx(styles.Drawer, { [styles.animateOpen]: shouldOpen })}>
+      <aside className={cx(styles.Drawer, className, { [styles.animateOpen]: shouldOpen })}>
         {children}
         <button className={styles.DrawerClose} onClick={onCloseDrawer} type="button" ariaLabel="Close">
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">

@@ -97,3 +97,73 @@ export const Photos = [
     '/static/img/photography/experimental/Windmills-thumb.jpg'
   ]]
 ];
+
+const NY = 'New York, NY';
+
+export const WorkExperience = [
+  ['Button', [
+    {
+      role: 'Front End Engineer',
+      description: 'Built and maintained usebutton.com. Also worked on maintenance and upgrades on various front end web applications.',
+      location: NY,
+      timeframe: 'Jan 2020 – Apr 2020'
+    }, {
+      role: 'Web Developer',
+      location: NY,
+      timeframe: 'Jun 2018 – Feb 2020'
+    }
+  ]],
+  ['Vestorly', [
+    {
+      role: 'Software Engineer and Designer',
+      description: 'Used Ember.js, SASS, Handlebars and other front end frameworks to design and build components for Vestorly web apps.',
+      location: NY,
+      timeframe: 'Oct 2015 - Jun 2018'
+    }
+  ]],
+  ['General Assembly', [
+    {
+      role: 'Web Developer',
+      description: 'Full stack development using HTML5, CSS, Javascript, jQuery, Node.js, MongoDB, Ruby & Rails, PostgreSQL.',
+      location: NY,
+      timeframe: 'May 2015 - Aug 2015'
+    }
+  ]],
+  ['Wid Chapman Architects', [
+    {
+      role: 'Associate Project Manager',
+      description: 'Design development and project management for multiple hospitality, commercial and residential projects.',
+      location: NY,
+      timeframe: 'Apr 2012 - Apr 2015'
+    }
+  ]]
+];
+
+export const Education = [
+  ['Pratt Institute', [
+    {
+      major: 'Bachelor of Architecture',
+      timeframe: '2006 - 2011',
+      description: 'Enrolled in 5 year accredited architecture program. Participated in 2 study abroad programs in Asia and Rome, Italy.'
+    }
+  ]],
+  ['General Assembly', [
+    {
+      major: 'Web Development',
+      timeframe: '2015 - 2015',
+      description: 'Enrolled in 12 week intensive course training on full stack web development.'
+    }
+  ]]
+];
+
+export const Tech = [
+  ['Javascript', 'ReactJS', 'Redux', 'Next.js', 'EmberJS', 'Typescript/Flow'],
+  ['CSS/SCSS/SASS', 'HTML5',' Node.js', 'Webpack', 'Babel', 'Mocha'],
+  ['styled-components', 'Immutable.js', 'ES', 'Foundation', 'Go', 'WCAG']
+];
+
+export const Interests = [
+  ['Web Optimizations', 'Interaction Design', 'Responsive Design', 'Isomorphic Apps'],
+  ['Web Design', 'Architecture', 'Photography', 'Minimalist Art'],
+  ['Travel', 'Gaming', 'Horology', 'Web Accessibility']
+];
