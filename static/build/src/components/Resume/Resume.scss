@@ -1,0 +1,138 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+
+.ResumeSection {
+  padding: 2rem 2.5rem;
+  border-bottom: 1px solid #d2d2d2;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+    border: none;
+  }
+
+  .ResumeSubHeader {
+    margin-bottom: .75rem;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: .25px;
+  }
+
+  .ResumeEntry {
+    padding: 1.5rem 0;
+
+    &.isFlex {
+      display: flex;
+      flex-wrap: wrap;
+
+      > ul {
+        width: calc(100% / 3);
+
+        &:first-of-type {
+          padding-left: 0;
+        }
+      }
+
+      @media (max-width: 480px) {
+        > ul {
+          width: 50%;
+          padding: 0;
+          margin-bottom: .75rem;
+        }
+      }
+
+      @media (max-width: 380px) {
+        flex-direction: column;
+
+        > ul {
+          width: 100%;
+          margin-bottom: .65rem;
+        }
+      }
+    }
+
+    &:not(:last-of-type) {
+     border-bottom: 1px solid #d2d2d2;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  .ResumeEntryDetails {
+    margin: 0;
+    font-size: .875rem;
+    position: relative;
+
+    li:not(:last-of-type) {
+      margin-bottom: .5rem;
+    }
+
+    .Role {
+      font-weight: $font-heavy;
+      color: $secondary-theme-color;
+
+      &:before {
+        content: '';
+        display: block;
+        width: .5rem;
+        height: .5rem;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #acacac;
+        left: .125rem;
+        top: .25rem;
+      }
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      position: relative;
+
+      + ul {
+        margin-top: 1.25rem;
+      }
+
+      .Role:before {
+        left: -.875rem;
+      }
+
+      &:not(:last-of-type):before {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: .125rem;
+        left: -.675rem;
+        top: 1.125rem;
+        background-color: #d2d2d2;
+      }
+    }
+
+    .RoleTimeframe {
+      font-style: italic;
+    }
+
+    .RoleDescrip {
+      font-weight: $font-medium;
+      margin: 0;
+    }
+  }
+
+  .ResumeSectionHeader {
+
+  }
+  
+  .ResumeSubHeader {
+    // margin-bottom: 
+  }
+}
