@@ -92,7 +92,7 @@
 
 section .ResumeDrawer {
   min-width: 40rem;
-  padding: 2rem 0;
+  padding: 0;
 
   @media (max-width: 640px) {
     min-width: 100%;
