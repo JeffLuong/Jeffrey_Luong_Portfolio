@@ -58,7 +58,7 @@ var Drawer = (_ref) => {
     className: (0, _classnames.default)(styles.Drawer, className, {
       [styles.animateOpen]: shouldOpen
     })
-  }, children, (0, _preact.h)("button", {
+  }, (0, _preact.h)("button", {
     className: styles.DrawerClose,
     onClick: onCloseDrawer,
     type: "button",
@@ -74,7 +74,7 @@ var Drawer = (_ref) => {
   }), (0, _preact.h)("path", {
     d: "M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z",
     fill: Colors.primaryTheme
-  })))));
+  }))), children));
 };
 
 var _default = Drawer;
