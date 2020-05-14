@@ -1,6 +1,7 @@
 export const DefaultTitle = 'Jeffrey Luong';
 
 export const BaseUrl = 'https://www.jeffreyluong.com';
+export const SourceCodeUrl = 'https://github.com/JeffLuong/Jeffrey_Luong_Portfolio';
 
 export const UrlMap = {
   '/': {
