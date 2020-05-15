@@ -1,7 +1,7 @@
 import { GoogleAnalyticsTracker } from '../lib/analytics';
 import { useEffect, useRef } from 'preact/hooks';
 
-const usePageViewTracker = () => {
+const useAnalytics = () => {
   const gaRef = useRef();
 
   useEffect(() => {
@@ -10,9 +10,14 @@ const usePageViewTracker = () => {
     }
   }, []);
 
-  return path => {
-    gaRef.current.trackPageView(path);
+  return {
+    trackPageView: path => {
+      gaRef.current.trackPageView(path);
+    },
+    trackClick: params => {
+      gaRef.current.trackClick(params);
+    }
   };
 };
 
-export default usePageViewTracker;
+export default useAnalytics;

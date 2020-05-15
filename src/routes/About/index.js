@@ -12,9 +12,23 @@ import ExternalLink from '../../components/ExternalLink';
 import Drawer from '../../components/Drawer';
 import Button from '../../components/Button';
 import Resume from '../../components/Resume';
+import useAnalytics from '../../hooks/useAnalytics';
 
 const About = ({ path }) => {
   const [isViewingResume, setResumeViewing] = useState(false);
+  const { trackClick } = useAnalytics();
+  const toggleResume = () => {
+    setResumeViewing(true);
+    if (trackClick) {
+      trackClick({
+        hitType: 'event',
+        eventCategory: 'Resume',
+        eventAction: 'click',
+        eventLabel: 'View Resume'
+      });
+    }
+  };
+
   return (
     <DocumentHead title={UrlMap[path].title} description={UrlMap[path].description} canonicalUrl={`${BaseUrl}${path}`}>
       <Section>
@@ -32,7 +46,7 @@ const About = ({ path }) => {
               ))}
             </ul>
             <div className={styles.AboutResume}>
-              <Button onClick={() => setResumeViewing(true)}>
+              <Button onClick={toggleResume}>
                 See Resume
               </Button>
             </div>

@@ -8,7 +8,7 @@ import About from '../routes/About';
 import NotFound from '../routes/NotFound';
 import Work from '../routes/Work';
 import Photography from '../routes/Photography';
-import usePageViewTracker from '../hooks/usePageViewTracker';
+import usePageViewTracker from '../hooks/useAnalytics';
 
 import Navigation from './Navigation';
 import Footer from './Footer';
@@ -28,17 +28,17 @@ const App = props => {
   const path = global.window ? getCurrentUrl() : props.url;
   const [statePath, setStatePath] = useState(path);
   const [bgClass, setBgClass] = useState(getRouteClass(path));
-  const pageTracker = usePageViewTracker();
+  const { trackPageView } = usePageViewTracker();
   const animate = async e => {
     setStatePath(e.url);
     setBgClass(getRouteClass(e.url));
   };
 
   useEffect(() => {
-    if (pageTracker && process.env.NODE_ENV === 'production') {
-      pageTracker(statePath);
+    if (trackPageView) {
+      trackPageView(statePath);
     }
-  }, [statePath]);
+  }, [statePath, trackPageView]);
 
   return (
     <div className={cx(styles.AppInnerWrapper, bgClass)}>
