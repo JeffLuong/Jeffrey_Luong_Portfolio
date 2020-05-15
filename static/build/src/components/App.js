@@ -23,7 +23,7 @@ var _Work = _interopRequireDefault(require("../routes/Work"));
 
 var _Photography = _interopRequireDefault(require("../routes/Photography"));
 
-var _usePageViewTracker = _interopRequireDefault(require("../hooks/usePageViewTracker"));
+var _useAnalytics = _interopRequireDefault(require("../hooks/useAnalytics"));
 
 var _Navigation = _interopRequireDefault(require("./Navigation"));
 
@@ -63,7 +63,9 @@ var App = props => {
   var path = global.window ? (0, _preactRouter.getCurrentUrl)() : props.url;
   var [statePath, setStatePath] = (0, _hooks.useState)(path);
   var [bgClass, setBgClass] = (0, _hooks.useState)(getRouteClass(path));
-  var pageTracker = (0, _usePageViewTracker.default)();
+  var {
+    trackPageView
+  } = (0, _useAnalytics.default)();
 
   var animate = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(function* (e) {
@@ -77,10 +79,10 @@ var App = props => {
   }();
 
   (0, _hooks.useEffect)(() => {
-    if (pageTracker && process.env.NODE_ENV === 'production') {
-      pageTracker(statePath);
+    if (trackPageView) {
+      trackPageView(statePath);
     }
-  }, [statePath]);
+  }, [statePath, trackPageView]);
   return (0, _preact.h)("div", {
     className: (0, _classnames.default)(styles.AppInnerWrapper, bgClass)
   }, (0, _preact.h)(_Navigation.default, {

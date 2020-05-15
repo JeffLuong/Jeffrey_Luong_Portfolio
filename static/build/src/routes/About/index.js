@@ -39,6 +39,8 @@ var _Button = _interopRequireDefault(require("../../components/Button"));
 
 var _Resume = _interopRequireDefault(require("../../components/Resume"));
 
+var _useAnalytics = _interopRequireDefault(require("../../hooks/useAnalytics"));
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -50,6 +52,23 @@ var About = (_ref) => {
     path
   } = _ref;
   var [isViewingResume, setResumeViewing] = (0, _hooks.useState)(false);
+  var {
+    trackClick
+  } = (0, _useAnalytics.default)();
+
+  var toggleResume = () => {
+    setResumeViewing(true);
+
+    if (trackClick) {
+      trackClick({
+        hitType: 'event',
+        eventCategory: 'Resume',
+        eventAction: 'click',
+        eventLabel: 'View Resume'
+      });
+    }
+  };
+
   return (0, _preact.h)(_DocumentHead.default, {
     title: _data.UrlMap[path].title,
     description: _data.UrlMap[path].description,
@@ -79,7 +98,7 @@ var About = (_ref) => {
   })), (0, _preact.h)("div", {
     className: styles.AboutResume
   }, (0, _preact.h)(_Button.default, {
-    onClick: () => setResumeViewing(true)
+    onClick: toggleResume
   }, "See Resume"))), (0, _preact.h)(_Head.default, {
     className: styles.SvgHead
   }), isViewingResume && (0, _preact.h)(_Drawer.default, {
