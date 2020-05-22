@@ -79,8 +79,17 @@ var App = props => {
   }();
 
   (0, _hooks.useEffect)(() => {
+    var {
+      document
+    } = global;
+
     if (trackPageView) {
       trackPageView(statePath);
+    }
+
+    if (document) {
+      var wrapper = document.querySelector(".".concat(styles.AppInnerWrapper));
+      wrapper && wrapper.scrollTo(0, 0);
     }
   }, [statePath, trackPageView]);
   return (0, _preact.h)("div", {
