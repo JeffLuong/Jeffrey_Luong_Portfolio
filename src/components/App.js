@@ -35,8 +35,13 @@ const App = props => {
   };
 
   useEffect(() => {
+    const { document } = global;
     if (trackPageView) {
       trackPageView(statePath);
+    }
+    if (document) {
+      const wrapper = document.querySelector(`.${styles.AppInnerWrapper}`);
+      wrapper && wrapper.scrollTo(0, 0);
     }
   }, [statePath, trackPageView]);
 
