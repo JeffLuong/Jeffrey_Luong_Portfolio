@@ -1,4 +1,5 @@
 export const DefaultTitle = 'Jeffrey Luong';
+export const DefaultDescription = 'Welcome to my portfolio website!';
 
 export const BaseUrl = 'https://www.jeffreyluong.com';
 export const SourceCodeUrl = 'https://github.com/JeffLuong/Jeffrey_Luong_Portfolio';
@@ -7,7 +8,7 @@ export const UrlMap = {
   '/': {
     title: DefaultTitle,
     name: 'Home',
-    description: 'Welcome to my portfolio website!'
+    description: DefaultDescription
   },
   '/about': {
     title: `${DefaultTitle} | About`,
