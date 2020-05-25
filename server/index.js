@@ -8,7 +8,7 @@ import { h } from 'preact';
 import BaseTemplate from './base-template';
 
 import App from '../src/components/App';
-import { UrlMap } from '../src/data';
+import { DefaultDescription, DefaultTitle, UrlMap } from '../src/data';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -43,7 +43,9 @@ app.get(/^(?!(\/static|\/dist)).+/, (req, res) => {
     let page = cache.get(url);
   
     if (!page) {
-      const { title, description } = UrlMap[url];
+      const pageMap = UrlMap[url];
+      const title = pageMap && pageMap.title || DefaultTitle;
+      const description = pageMap && pageMap.description || DefaultDescription;
       const canonicalUrl = `https://www.jeffreyluong.com${url}`;
       page = BaseTemplate(
         { title, description, canonicalUrl },
