@@ -3,9 +3,11 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Interests = exports.Tech = exports.Education = exports.WorkExperience = exports.Photos = exports.SocialLinks = exports.FeaturedWork = exports.hasPageTitle = exports.UrlPaths = exports.UrlMap = exports.SourceCodeUrl = exports.BaseUrl = exports.DefaultTitle = void 0;
+exports.Interests = exports.Tech = exports.Education = exports.WorkExperience = exports.Photos = exports.SocialLinks = exports.FeaturedWork = exports.hasPageTitle = exports.UrlPaths = exports.UrlMap = exports.SourceCodeUrl = exports.BaseUrl = exports.DefaultDescription = exports.DefaultTitle = void 0;
 var DefaultTitle = 'Jeffrey Luong';
 exports.DefaultTitle = DefaultTitle;
+var DefaultDescription = 'Welcome to my portfolio website!';
+exports.DefaultDescription = DefaultDescription;
 var BaseUrl = 'https://www.jeffreyluong.com';
 exports.BaseUrl = BaseUrl;
 var SourceCodeUrl = 'https://github.com/JeffLuong/Jeffrey_Luong_Portfolio';
@@ -14,7 +16,7 @@ var UrlMap = {
   '/': {
     title: DefaultTitle,
     name: 'Home',
-    description: 'Welcome to my portfolio website!'
+    description: DefaultDescription
   },
   '/about': {
     title: "".concat(DefaultTitle, " | About"),

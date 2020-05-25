@@ -37,7 +37,7 @@ var Navigation = (_ref) => {
   }, (0, _preact.h)("nav", null, (0, _preact.h)(_match.Link, {
     className: styles.HomeLink,
     href: "/"
-  }, "Jeff"), (0, _preact.h)("ul", null, Object.keys(_data.UrlMap).filter(p => p !== '/').map(path => (0, _preact.h)("li", null, (0, _preact.h)(_match.Link, {
+  }, "Jeff"), (0, _preact.h)("ul", null, _data.UrlPaths.filter(p => p !== '/').map(path => (0, _preact.h)("li", null, (0, _preact.h)(_match.Link, {
     activeClassName: styles.active,
     href: path
   }, _data.UrlMap[path].name))))));

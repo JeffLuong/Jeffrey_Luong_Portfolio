@@ -41,53 +41,67 @@ var ResumeSection = (_ref) => {
   }, title), children);
 };
 
+var ResumeEntry = (_ref2) => {
+  var {
+    className,
+    children,
+    subtitle
+  } = _ref2;
+  return (0, _preact.h)("article", {
+    className: (0, _classnames.default)(styles.ResumeEntry, className)
+  }, subtitle && (0, _preact.h)("h3", {
+    className: styles.ResumeSubHeader
+  }, subtitle), children);
+};
+
+var ResumeMiscDetailsList = (_ref3) => {
+  var {
+    details
+  } = _ref3;
+  return details.map(grouped => (0, _preact.h)("ul", {
+    className: styles.ResumeEntryDetails
+  }, grouped.map(tech => (0, _preact.h)("li", null, tech))));
+};
+
+var Role = (_ref4) => {
+  var {
+    role,
+    location,
+    timeframe,
+    description
+  } = _ref4;
+  return (0, _preact.h)(_preact.Fragment, null, (0, _preact.h)("li", {
+    className: styles.Role
+  }, role), (0, _preact.h)("li", {
+    className: styles.RoleTimeframe
+  }, timeframe), (0, _preact.h)("li", null, location), description && (0, _preact.h)("li", null, (0, _preact.h)("p", {
+    className: styles.RoleDescrip
+  }, description)));
+};
+
 var Resume = () => (0, _preact.h)(_preact.Fragment, null, (0, _preact.h)(ResumeSection, {
   title: "Experience"
-}, _data.WorkExperience.map((_ref2) => {
-  var [company, roles] = _ref2;
-  return (0, _preact.h)("div", {
-    className: styles.ResumeEntry
-  }, (0, _preact.h)("h3", {
-    className: styles.ResumeSubHeader
-  }, company), (0, _preact.h)("ul", {
+}, _data.WorkExperience.map((_ref5) => {
+  var [company, roles] = _ref5;
+  return (0, _preact.h)(ResumeEntry, {
+    subtitle: company
+  }, (0, _preact.h)("ul", {
     className: styles.ResumeEntryDetails
-  }, roles.length > 1 ? (0, _preact.h)("li", null, roles.map((_ref3) => {
-    var {
-      role,
-      location,
-      timeframe,
-      description
-    } = _ref3;
-    return (0, _preact.h)("ul", null, (0, _preact.h)("li", {
-      className: styles.Role
-    }, role), (0, _preact.h)("li", {
-      className: styles.RoleTimeframe
-    }, timeframe), (0, _preact.h)("li", null, location), description && (0, _preact.h)("li", null, (0, _preact.h)("p", {
-      className: styles.RoleDescrip
-    }, description)));
-  })) : (0, _preact.h)(_preact.Fragment, null, (0, _preact.h)("li", {
-    className: styles.Role
-  }, roles[0].role), (0, _preact.h)("li", {
-    className: styles.RoleTimeframe
-  }, roles[0].timeframe), (0, _preact.h)("li", null, roles[0].location), roles[0].description && (0, _preact.h)("li", null, (0, _preact.h)("p", {
-    className: styles.RoleDescrip
-  }, roles[0].description)))));
+  }, roles.length > 1 ? (0, _preact.h)("li", null, roles.map(role => (0, _preact.h)("ul", null, (0, _preact.h)(Role, role)))) : (0, _preact.h)(Role, roles[0])));
 })), (0, _preact.h)(ResumeSection, {
   title: "Education"
-}, _data.Education.map((_ref4) => {
-  var [institution, study] = _ref4;
-  return (0, _preact.h)("div", {
-    className: styles.ResumeEntry
-  }, (0, _preact.h)("h3", {
-    className: styles.ResumeSubHeader
-  }, institution), (0, _preact.h)("ul", {
+}, _data.Education.map((_ref6) => {
+  var [institution, study] = _ref6;
+  return (0, _preact.h)(ResumeEntry, {
+    subtitle: institution
+  }, (0, _preact.h)("ul", {
     className: styles.ResumeEntryDetails
-  }, study.map((_ref5) => {
+  }, study.map((_ref7) => {
     var {
       major,
       timeframe,
       description
-    } = _ref5;
+    } = _ref7;
     return (0, _preact.h)(_preact.Fragment, null, (0, _preact.h)("li", {
       className: styles.Role
     }, major), (0, _preact.h)("li", {
@@ -98,17 +112,17 @@ var Resume = () => (0, _preact.h)(_preact.Fragment, null, (0, _preact.h)(ResumeS
   })));
 })), (0, _preact.h)(ResumeSection, {
   title: "Technical"
-}, (0, _preact.h)("div", {
-  className: (0, _classnames.default)(styles.ResumeEntry, styles.isFlex)
-}, _data.Tech.map(grouped => (0, _preact.h)("ul", {
-  className: styles.ResumeEntryDetails
-}, grouped.map(tech => (0, _preact.h)("li", null, tech)))))), (0, _preact.h)(ResumeSection, {
+}, (0, _preact.h)(ResumeEntry, {
+  className: styles.isFlex
+}, (0, _preact.h)(ResumeMiscDetailsList, {
+  details: _data.Tech
+}))), (0, _preact.h)(ResumeSection, {
   title: "Interests"
-}, (0, _preact.h)("div", {
-  className: (0, _classnames.default)(styles.ResumeEntry, styles.isFlex)
-}, _data.Interests.map(grouped => (0, _preact.h)("ul", {
-  className: styles.ResumeEntryDetails
-}, grouped.map(interest => (0, _preact.h)("li", null, interest)))))));
+}, (0, _preact.h)(ResumeEntry, {
+  className: styles.isFlex
+}, (0, _preact.h)(ResumeMiscDetailsList, {
+  details: _data.Interests
+}))));
 
 var _default = Resume;
 exports.default = _default;

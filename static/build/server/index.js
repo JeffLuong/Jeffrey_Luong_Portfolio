@@ -55,10 +55,9 @@ app.get(/^(?!(\/static|\/dist)).+/, (req, res) => {
     var page = cache.get(url);
 
     if (!page) {
-      var {
-        title,
-        description
-      } = _data.UrlMap[url];
+      var pageMap = _data.UrlMap[url];
+      var title = pageMap && pageMap.title || _data.DefaultTitle;
+      var description = pageMap && pageMap.description || _data.DefaultDescription;
       var canonicalUrl = "https://www.jeffreyluong.com".concat(url);
       page = (0, _baseTemplate.default)({
         title,
