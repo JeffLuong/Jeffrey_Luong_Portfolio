@@ -2,7 +2,7 @@
 @import '../../styles/fonts';
 
 .Button {
-  @include transition(transform .125s ease-in-out, border .125s ease-in-out);
+  @include transition(transform .075s ease-in-out, border .075s ease-in-out);
   background-color: #00a3ff;
   color: white;
   cursor: pointer;
@@ -11,6 +11,9 @@
   display: block;
   text-align: center;
   border-bottom: 3px solid #0072b2;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
   border-radius: 4px;
   display: inline-block;
   font-weight: 600;
