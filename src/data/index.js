@@ -39,6 +39,12 @@ export const FeaturedWork = [
     tech: ['React', 'Redux', 'Node.js', 'SCSS', 'Webpack', 'Babel'],
     url: 'https://www.usebutton.com'
   }, {
+    name: 'Block It',
+    img: '/static/img/work/block-it.jpg',
+    description: 'Simple Tetris game built using <strong>React</strong>.',
+    tech: ['React', 'Typescript', 'Node.js', 'Express'],
+    url: 'https://jeffreyluong-block-it.herokuapp.com/'
+  }, {
     name: 'Hue Square',
     img: '/static/img/work/hue-square.jpg',
     description: 'Minimalist color mixing puzzle game. Designed game rules and mechanics. CSS3 animations along with JQuery DOM manipulation.',
