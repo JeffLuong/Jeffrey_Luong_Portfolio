@@ -1,14 +1,12 @@
 import { h } from 'preact';
+import cx from 'classnames';
 
-const FlexContainer = ({ children, style }) => (
+import * as styles from './FlexContainer.scss';
+
+const FlexContainer = ({ className, children, justifyCenter = true, style }) => (
   <div
-    style={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      margin: '0 -1rem',
-      ...style
-    }}>
+    className={cx(styles.FlexContainer, { [styles.justifyCenter]: justifyCenter }, className)}
+    style={style}>
     {children}
   </div>
 );

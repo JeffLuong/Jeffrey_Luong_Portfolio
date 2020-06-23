@@ -27,7 +27,7 @@ const Work = ({ path }) => {
       <Section>
         <article>
           <h1 className={styles.WorkHeader}>Selected Works</h1>
-          <FlexContainer>
+          <FlexContainer justifyCenter={false} className={styles.WorkContainer}>
             {FeaturedWork.map(work => {
               const { name, img, url } = work;
               return (

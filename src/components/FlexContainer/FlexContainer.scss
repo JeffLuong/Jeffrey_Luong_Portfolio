@@ -1,0 +1,9 @@
+.FlexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+
+  &.justifyCenter {
+    justify-content: center;
+  }
+}
