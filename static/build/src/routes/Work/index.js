@@ -30,7 +30,8 @@ var _Button = require("../../components/Button");
 var styles = _interopRequireWildcard({
   "WorkHeader": "_1ryKWaixUeQVCGa5QaXGIB",
   "BtnBg": "Lixtra6kmRwIwvgi8o6Am",
-  "WorkDrawer": "_31Y5L5Gdg7C36IOY2VzUZ9"
+  "WorkDrawer": "_31Y5L5Gdg7C36IOY2VzUZ9",
+  "WorkContainer": "KH-37l6hF-t3pu5jrbZ56"
 });
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
@@ -59,7 +60,10 @@ var Work = (_ref) => {
     canonicalUrl: "".concat(_data.BaseUrl).concat(path)
   }, (0, _preact.h)(_Section.default, null, (0, _preact.h)("article", null, (0, _preact.h)("h1", {
     className: styles.WorkHeader
-  }, "Selected Works"), (0, _preact.h)(_FlexContainer.default, null, _data.FeaturedWork.map(work => {
+  }, "Selected Works"), (0, _preact.h)(_FlexContainer.default, {
+    justifyCenter: false,
+    className: styles.WorkContainer
+  }, _data.FeaturedWork.map(work => {
     var {
       name,
       img,

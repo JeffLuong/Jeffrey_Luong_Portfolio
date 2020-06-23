@@ -18,3 +18,15 @@
     }
   }
 }
+
+.WorkContainer {
+  padding: 0 calc(100% - 791px - 6rem);
+
+  @media (max-width: 1000px) {
+    padding: 0 calc(100% - 522px - 4rem);
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
