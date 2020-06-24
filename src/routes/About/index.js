@@ -19,14 +19,12 @@ const About = ({ path }) => {
   const { trackClick } = useAnalytics();
   const toggleResume = () => {
     setResumeViewing(true);
-    if (trackClick) {
-      trackClick({
-        hitType: 'event',
-        eventCategory: 'Resume',
-        eventAction: 'click',
-        eventLabel: 'View Resume'
-      });
-    }
+    trackClick({
+      hitType: 'event',
+      eventCategory: 'Resume',
+      eventAction: 'click',
+      eventLabel: 'View Resume'
+    });
   };
 
   return (

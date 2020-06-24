@@ -6,12 +6,6 @@ export class GoogleAnalyticsTracker {
 
   static __instance = null;
 
-  static defaultClickParams = {
-    hitType: 'event',
-    eventCategory: 'Videos',
-    eventAction: 'click'
-  };
-
   static createInstance(ga) {
     return GoogleAnalyticsTracker.__instance = new GoogleAnalyticsTracker(ga);
   }
@@ -26,19 +20,27 @@ export class GoogleAnalyticsTracker {
 
   trackPageView(path) {
     const { __ga } = this;
-    if (__ga && this.isProduction) {
-      __ga('set', 'page', path);
-      __ga('send', 'pageview');
+    if (__ga) {
+      if (this.isProduction) {
+        __ga('set', 'page', path);
+        __ga('send', 'pageview');
+      } else {
+        console.log(`Tracking pageview ::: ${path}`);
+      }
     }
   }
 
   trackClick(params) {
     const { __ga } = this;
-    if (__ga && this.isProduction) {
-      __ga('send', {
-        ...GoogleAnalyticsTracker.defaultClickParams,
-        ...params
-      });
+    if (__ga) {
+      if (this.isProduction) {
+        __ga('send', { ...params });
+      } else {
+        const { hitType: t, eventCategory: c, eventAction: a, eventLabel: l } = params;
+        console.log(
+          `Tracking click ::: type: "${t}" ::: category: "${c}" ::: action: "${a}" ::: label: "${l}"`
+        );
+      }
     }
   }
 }

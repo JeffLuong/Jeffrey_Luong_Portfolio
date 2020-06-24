@@ -10,17 +10,32 @@ import useCachedHandlers from '../../hooks/useCachedHandlers';
 import Drawer from '../../components/Drawer';
 import Lightning from '../../components/Svg/Lightning';
 import { ButtonLink } from '../../components/Button';
+import useAnalytics from '../../hooks/useAnalytics';
 
 import * as styles from './Work.scss';
 
 const Work = ({ path }) => {
   const [work, setCurrWork] = useState('');
+  const { trackClick } = useAnalytics();
+  const trackClickEvent = (eventCategory, eventLabel) => {
+    trackClick({
+      hitType: 'event',
+      eventCategory,
+      eventAction: 'click',
+      eventLabel
+    });
+  };
   const [getHandlers] = useCachedHandlers(e => {
     const { selectedWork } = e.currentTarget.dataset;
     if (selectedWork) {
-      setCurrWork(FeaturedWork.find(w => w.url === selectedWork));
+      const selected = FeaturedWork.find(w => w.url === selectedWork);
+      if (selected) {
+        setCurrWork(selected);
+        trackClickEvent('Project', `Learn More: ${selected.name}`);
+      }
     }
   });
+
 
   return (
     <DocumentHead title={UrlMap[path].title} description={UrlMap[path].description} canonicalUrl={`${BaseUrl}${path}`}>
@@ -40,7 +55,7 @@ const Work = ({ path }) => {
             })}
           </FlexContainer>
           {work &&
-            <Drawer className={styles.WorkDrawer} onClose={() => setCurrWork('')}>
+            <Drawer className={styles.WorkDrawer} onClose={() => setCurrWork(null)}>
               <h2 style={{ color: '#006199' }}>{work.name}</h2>
               <p dangerouslySetInnerHTML={{ __html: work.description }} />
               <h3 style={{ marginTop: '1.5rem' }}>Tech used:</h3>
@@ -50,6 +65,7 @@ const Work = ({ path }) => {
               <ButtonLink
                 style={{ display: 'block', marginTop: '2rem' }}
                 href={work.url}
+                onClick={() => trackClickEvent('Project', `View Live: ${work.name}`)}
                 isExternal>
                 View Project
               </ButtonLink>

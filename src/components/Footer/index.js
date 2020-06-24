@@ -8,15 +8,13 @@ import useAnalytics from '../../hooks/useAnalytics';
 const Footer = () => {
   const { trackClick } = useAnalytics();
   const trackViewSrc = () => {
-    if (trackClick) {
-      trackClick({
-        hitType: 'event',
-        eventCategory: 'Source Code',
-        eventAction: 'click',
-        eventLabel: 'View Source Code'
-      });
-    }
-  }
+    trackClick({
+      hitType: 'event',
+      eventCategory: 'Source Code',
+      eventAction: 'click',
+      eventLabel: 'View Source Code'
+    });
+  };
 
   return (
     <footer className={styles.Footer}>
