@@ -58,15 +58,12 @@ var About = (_ref) => {
 
   var toggleResume = () => {
     setResumeViewing(true);
-
-    if (trackClick) {
-      trackClick({
-        hitType: 'event',
-        eventCategory: 'Resume',
-        eventAction: 'click',
-        eventLabel: 'View Resume'
-      });
-    }
+    trackClick({
+      hitType: 'event',
+      eventCategory: 'Resume',
+      eventAction: 'click',
+      eventLabel: 'View Resume'
+    });
   };
 
   return (0, _preact.h)(_DocumentHead.default, {

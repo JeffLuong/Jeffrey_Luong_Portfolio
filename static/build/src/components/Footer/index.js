@@ -30,14 +30,12 @@ var Footer = () => {
   } = (0, _useAnalytics.default)();
 
   var trackViewSrc = () => {
-    if (trackClick) {
-      trackClick({
-        hitType: 'event',
-        eventCategory: 'Source Code',
-        eventAction: 'click',
-        eventLabel: 'View Source Code'
-      });
-    }
+    trackClick({
+      hitType: 'event',
+      eventCategory: 'Source Code',
+      eventAction: 'click',
+      eventLabel: 'View Source Code'
+    });
   };
 
   return (0, _preact.h)("footer", {

@@ -27,6 +27,8 @@ var _Lightning = _interopRequireDefault(require("../../components/Svg/Lightning"
 
 var _Button = require("../../components/Button");
 
+var _useAnalytics = _interopRequireDefault(require("../../hooks/useAnalytics"));
+
 var styles = _interopRequireWildcard({
   "WorkHeader": "_1ryKWaixUeQVCGa5QaXGIB",
   "BtnBg": "Lixtra6kmRwIwvgi8o6Am",
@@ -45,13 +47,31 @@ var Work = (_ref) => {
     path
   } = _ref;
   var [work, setCurrWork] = (0, _hooks.useState)('');
+  var {
+    trackClick
+  } = (0, _useAnalytics.default)();
+
+  var trackClickEvent = (eventCategory, eventLabel) => {
+    trackClick({
+      hitType: 'event',
+      eventCategory,
+      eventAction: 'click',
+      eventLabel
+    });
+  };
+
   var [getHandlers] = (0, _useCachedHandlers.default)(e => {
     var {
       selectedWork
     } = e.currentTarget.dataset;
 
     if (selectedWork) {
-      setCurrWork(_data.FeaturedWork.find(w => w.url === selectedWork));
+      var selected = _data.FeaturedWork.find(w => w.url === selectedWork);
+
+      if (selected) {
+        setCurrWork(selected);
+        trackClickEvent('Project', "Learn More: ".concat(selected.name));
+      }
     }
   });
   return (0, _preact.h)(_DocumentHead.default, {
@@ -80,7 +100,7 @@ var Work = (_ref) => {
     })));
   })), work && (0, _preact.h)(_Drawer.default, {
     className: styles.WorkDrawer,
-    onClose: () => setCurrWork('')
+    onClose: () => setCurrWork(null)
   }, (0, _preact.h)("h2", {
     style: {
       color: '#006199'
@@ -99,6 +119,7 @@ var Work = (_ref) => {
       marginTop: '2rem'
     },
     href: work.url,
+    onClick: () => trackClickEvent('Project', "View Live: ".concat(work.name)),
     isExternal: true
   }, "View Project")))));
 };

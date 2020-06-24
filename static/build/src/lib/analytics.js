@@ -34,10 +34,14 @@ class GoogleAnalyticsTracker {
       __ga
     } = this;
 
-    if (__ga && this.isProduction) {
-      __ga('set', 'page', path);
+    if (__ga) {
+      if (this.isProduction) {
+        __ga('set', 'page', path);
 
-      __ga('send', 'pageview');
+        __ga('send', 'pageview');
+      } else {
+        console.log("Tracking pageview ::: ".concat(path));
+      }
     }
   }
 
@@ -46,8 +50,18 @@ class GoogleAnalyticsTracker {
       __ga
     } = this;
 
-    if (__ga && this.isProduction) {
-      __ga('send', _objectSpread(_objectSpread({}, GoogleAnalyticsTracker.defaultClickParams), params));
+    if (__ga) {
+      if (this.isProduction) {
+        __ga('send', _objectSpread({}, params));
+      } else {
+        var {
+          hitType: t,
+          eventCategory: c,
+          eventAction: a,
+          eventLabel: l
+        } = params;
+        console.log("Tracking click ::: type: \"".concat(t, "\" ::: category: \"").concat(c, "\" ::: action: \"").concat(a, "\" ::: label: \"").concat(l, "\""));
+      }
     }
   }
 
@@ -56,9 +70,3 @@ class GoogleAnalyticsTracker {
 exports.GoogleAnalyticsTracker = GoogleAnalyticsTracker;
 
 _defineProperty(GoogleAnalyticsTracker, "__instance", null);
-
-_defineProperty(GoogleAnalyticsTracker, "defaultClickParams", {
-  hitType: 'event',
-  eventCategory: 'Videos',
-  eventAction: 'click'
-});
