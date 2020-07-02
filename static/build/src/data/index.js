@@ -90,7 +90,12 @@ exports.SocialLinks = SocialLinks;
 var Photos = [['Film', ['/static/img/photography/film/NYalley-thumb.jpg', '/static/img/photography/film/Flatiron-thumb.jpg', '/static/img/photography/film/Venice-thumb.jpg', '/static/img/photography/film/StPeter-thumb.jpg', '/static/img/photography/film/Bernini-thumb.jpg', '/static/img/photography/film/Isabel-thumb.jpg']], ['Digital', ['/static/img/photography/experimental/Jeff-thumb.jpg', '/static/img/photography/experimental/Doro-thumb.jpg', '/static/img/photography/experimental/Michael-thumb.jpg', '/static/img/photography/experimental/Isabel-thumb.jpg', '/static/img/photography/experimental/DrawingHands-thumb.jpg', '/static/img/photography/experimental/Ponzu-thumb.jpg', '/static/img/photography/experimental/Spheres-thumb.jpg', '/static/img/photography/experimental/VicenzaCathedral-thumb.jpg', '/static/img/photography/experimental/Windmills-thumb.jpg']]];
 exports.Photos = Photos;
 var NY = 'New York, NY';
-var WorkExperience = [['Button', [{
+var WorkExperience = [['Better.com', [{
+  role: 'Front End Engineer',
+  description: 'Working in the Borrower Experience Team to improve the mortgage application process for everyone.',
+  location: NY,
+  timeframe: 'Jul 2020 - Present'
+}]], ['Button', [{
   role: 'Front End Engineer',
   description: 'Built and maintained usebutton.com. Also worked on maintenance and upgrades on various front end web applications.',
   location: NY,
