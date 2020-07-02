@@ -109,6 +109,14 @@ export const Photos = [
 const NY = 'New York, NY';
 
 export const WorkExperience = [
+  ['Better.com', [
+    {
+      role: 'Front End Engineer',
+      description: 'Working in the Borrower Experience Team to improve the mortgage application process for everyone.',
+      location: NY,
+      timeframe: 'Jul 2020 - Present'
+    }
+  ]],
   ['Button', [
     {
       role: 'Front End Engineer',
