@@ -1,6 +1,7 @@
+import { States, Months } from '../utils';
+
 export const DefaultTitle = 'Jeffrey Luong';
 export const DefaultDescription = 'Welcome to my portfolio website!';
-
 export const BaseUrl = 'https://www.jeffreyluong.com';
 export const SourceCodeUrl = 'https://github.com/JeffLuong/Jeffrey_Luong_Portfolio';
 
@@ -106,51 +107,53 @@ export const Photos = [
   ]]
 ];
 
-const NY = 'New York, NY';
-
 export const WorkExperience = [
   ['Better.com', [
     {
       role: 'Front End Engineer',
       description: 'Working in the Borrower Experience Team to improve the mortgage application process for everyone.',
-      location: NY,
-      timeframe: 'Jul 2020 - Present'
+      location: States.NY,
+      timeframe: `${Months[7]} 2020 - Present`
     }
   ]],
   ['Button', [
     {
       role: 'Front End Engineer',
       description: 'Built and maintained usebutton.com. Also worked on maintenance and upgrades on various front end web applications.',
-      location: NY,
-      timeframe: 'Jan 2020 – Apr 2020'
+      location: States.NY,
+      timeframe: `${Months[12]} 2019 – ${Months[5]} 2020`
     }, {
       role: 'Web Developer',
-      location: NY,
-      timeframe: 'Jun 2018 – Feb 2020'
+      location: States.NY,
+      timeframe: `${Months[6]} 2018 – ${Months[12]} 2019`
     }
   ]],
   ['Vestorly', [
     {
-      role: 'Software Engineer and Designer',
+      role: 'Software Engineer',
       description: 'Used Ember.js, SASS, Handlebars and other front end frameworks to design and build components for Vestorly web apps.',
-      location: NY,
-      timeframe: 'Oct 2015 - Jun 2018'
+      location: States.NY,
+      timeframe: `${Months[3]} 2017 - ${Months[6]} 2018`
+    }, {
+      role: 'Software Engineer and Designer',
+      location: States.NY,
+      timeframe: `${Months[10]} 2015 - ${Months[3]} 2017`
     }
   ]],
   ['General Assembly', [
     {
       role: 'Web Developer',
       description: 'Full stack development using HTML5, CSS, Javascript, jQuery, Node.js, MongoDB, Ruby & Rails, PostgreSQL.',
-      location: NY,
-      timeframe: 'May 2015 - Aug 2015'
+      location: States.NY,
+      timeframe: `${Months[5]} 2015 - ${Months[8]} 2015`
     }
   ]],
   ['Wid Chapman Architects', [
     {
       role: 'Associate Project Manager',
       description: 'Design development and project management for multiple hospitality, commercial and residential projects.',
-      location: NY,
-      timeframe: 'Apr 2012 - Apr 2015'
+      location: States.NY,
+      timeframe: `${Months[4]} 2012 - ${Months[4]} 2015`
     }
   ]]
 ];
@@ -173,9 +176,9 @@ export const Education = [
 ];
 
 export const Tech = [
-  ['Javascript', 'ReactJS', 'Redux', 'Next.js', 'EmberJS', 'Typescript/Flow'],
-  ['CSS/SCSS/SASS', 'HTML5',' Node.js', 'Webpack', 'Babel', 'Mocha'],
-  ['styled-components', 'Immutable.js', 'ES', 'Foundation', 'Go', 'WCAG']
+  ['Javascript', 'ReactJS', 'Redux', 'Next.js', 'EmberJS', 'Typescript/Flow', 'GraphQL'],
+  ['CSS/SCSS/SASS', 'HTML5',' Node.js', 'Webpack', 'Babel', 'Mocha', 'Jest'],
+  ['styled-components', 'Immutable.js', 'ES', 'ESlint', 'Foundation', 'Go', 'WCAG']
 ];
 
 export const Interests = [
