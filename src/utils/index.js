@@ -26,9 +26,9 @@ export const getRoleLength = (start, end) => {
   if (months >= 12) {
     const yrs = Math.floor(months / 12);
     const mos = months % 12;
-    return `${yrs} yrs${mos > 0 ? ` ${mos} mos` : ''}`;
+    return `${yrs} yrs${mos > 0 ? ` ${mos} ${mos > 1 ? 'mos' : 'mo'}` : ''}`;
   }
-  return months <= 1 ? '1 mos' : `${months} mos`;
+  return months <= 1 ? '1 mo' : `${months} mos`;
 }
 
 export const getWorkTimeframe = (start, end, current) => {
