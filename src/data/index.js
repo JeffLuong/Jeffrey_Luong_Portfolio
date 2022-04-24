@@ -1,4 +1,4 @@
-import { States, Months } from '../utils';
+import { States } from '../utils';
 
 export const DefaultTitle = 'Jeffrey Luong';
 export const DefaultDescription = 'Welcome to my portfolio website!';
@@ -108,12 +108,26 @@ export const Photos = [
 ];
 
 export const WorkExperience = [
+  ['GoFundMe', [
+    {
+      role: 'Senior Front End Engineer',
+      description: 'Working on internationalization with a focus on charities in the European market.',
+      location: `${States.NY} (Remote)`,
+      timeframe: [new Date(2022, 3), new Date(Date.now())],
+      current: true
+    }
+  ]],
   ['Better.com', [
     {
-      role: 'Front End Engineer',
-      description: 'Working in the Borrower Experience Team to improve the mortgage application process for everyone.',
+      role: 'Software Engineer V (Front End)',
+      description: 'Worked on Purchase and Cash Offer Program flows to improve the home buying process for everyone.',
       location: States.NY,
-      timeframe: `${Months[7]} 2020 - Present`
+      timeframe: [new Date(2021, 2), new Date(2022, 3)]
+    },
+    {
+      role: 'Software Engineer IV (Front End)',
+      location: States.NY,
+      timeframe: [new Date(2020, 6), new Date(2021, 2)]
     }
   ]],
   ['Button', [
@@ -121,11 +135,11 @@ export const WorkExperience = [
       role: 'Front End Engineer',
       description: 'Built and maintained usebutton.com. Also worked on maintenance and upgrades on various front end web applications.',
       location: States.NY,
-      timeframe: `${Months[12]} 2019 – ${Months[5]} 2020`
+      timeframe: [new Date(2019, 11), new Date(2020, 5)]
     }, {
       role: 'Web Developer',
       location: States.NY,
-      timeframe: `${Months[6]} 2018 – ${Months[12]} 2019`
+      timeframe: [new Date(2018, 5), new Date(2019, 11)]
     }
   ]],
   ['Vestorly', [
@@ -133,11 +147,11 @@ export const WorkExperience = [
       role: 'Software Engineer',
       description: 'Used Ember.js, SASS, Handlebars and other front end frameworks to design and build components for Vestorly web apps.',
       location: States.NY,
-      timeframe: `${Months[3]} 2017 - ${Months[6]} 2018`
+      timeframe: [new Date(2017, 2), new Date(2018, 5)]
     }, {
       role: 'Software Engineer and Designer',
       location: States.NY,
-      timeframe: `${Months[10]} 2015 - ${Months[3]} 2017`
+      timeframe: [new Date(2015, 9), new Date(2017, 2)]
     }
   ]],
   ['General Assembly', [
@@ -145,7 +159,7 @@ export const WorkExperience = [
       role: 'Web Developer',
       description: 'Full stack development using HTML5, CSS, Javascript, jQuery, Node.js, MongoDB, Ruby & Rails, PostgreSQL.',
       location: States.NY,
-      timeframe: `${Months[5]} 2015 - ${Months[8]} 2015`
+      timeframe: [new Date(2015, 4), new Date(2015, 7)]
     }
   ]],
   ['Wid Chapman Architects', [
@@ -153,7 +167,7 @@ export const WorkExperience = [
       role: 'Associate Project Manager',
       description: 'Design development and project management for multiple hospitality, commercial and residential projects.',
       location: States.NY,
-      timeframe: `${Months[4]} 2012 - ${Months[4]} 2015`
+      timeframe: [new Date(2012, 3), new Date(2015, 3)]
     }
   ]]
 ];

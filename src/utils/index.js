@@ -13,3 +13,27 @@ export const Months = {
   11: 'Nov',
   12: 'Dec'
 };
+
+const getDateString = (date) =>
+  `${date.toLocaleString('default', { month: 'short' })} ${date.getFullYear()}`;
+
+export const getRoleLength = (start, end) => {
+  let months = 0;
+  months = (end.getFullYear() - start.getFullYear()) * 12;
+  months -= start.getMonth();
+  months += end.getMonth();
+
+  if (months >= 12) {
+    const yrs = Math.floor(months / 12);
+    const mos = months % 12;
+    return `${yrs} yrs${mos > 0 ? ` ${mos} mos` : ''}`;
+  }
+  return months <= 1 ? '1 mos' : `${months} mos`;
+}
+
+export const getWorkTimeframe = (start, end, current) => {
+  const now = getDateString(new Date(Date.now()));
+  const _end = getDateString(end);
+  const _start = getDateString(start);
+  return `${_start} - ${now === _end && current ? 'Present' : _end} · ${getRoleLength(start, end)}`;
+};
