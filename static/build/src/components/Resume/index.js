@@ -11,9 +11,12 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _data = require("../../data");
 
+var _utils = require("../../utils");
+
 var styles = _interopRequireWildcard({
   "ResumeSection": "PZWlDOLaxIGYkYxGcvO5V",
   "ResumeSubHeader": "_386m3V9hACStksYIkbklTx",
+  "smallMargin": "wpPzhNSVUXkNJ0Mggw6n",
   "ResumeEntry": "_3ztcjlUf9GvrMyUQ7QQbGj",
   "isFlex": "_1BIwF0pZk8CgGIn-dKVEfd",
   "ResumeEntryDetails": "_1KsbohmubcgXSZX_UZz8zC",
@@ -45,13 +48,14 @@ var ResumeEntry = (_ref2) => {
   var {
     className,
     children,
-    subtitle
+    subtitle,
+    footnote
   } = _ref2;
   return (0, _preact.h)("article", {
     className: (0, _classnames.default)(styles.ResumeEntry, className)
   }, subtitle && (0, _preact.h)("h3", {
-    className: styles.ResumeSubHeader
-  }, subtitle), children);
+    className: (0, _classnames.default)(styles.ResumeSubHeader, footnote ? styles.smallMargin : {})
+  }, subtitle), footnote && (0, _preact.h)("h5", null, footnote), children);
 };
 
 var ResumeMiscDetailsList = (_ref3) => {
@@ -68,13 +72,14 @@ var Role = (_ref4) => {
     role,
     location,
     timeframe,
-    description
+    description,
+    current
   } = _ref4;
   return (0, _preact.h)(_preact.Fragment, null, (0, _preact.h)("li", {
     className: styles.Role
   }, role), (0, _preact.h)("li", {
     className: styles.RoleTimeframe
-  }, timeframe), (0, _preact.h)("li", null, location), description && (0, _preact.h)("li", null, (0, _preact.h)("p", {
+  }, (0, _utils.getWorkTimeframe)(timeframe[0], timeframe[1], current)), (0, _preact.h)("li", null, location), description && (0, _preact.h)("li", null, (0, _preact.h)("p", {
     className: styles.RoleDescrip
   }, description)));
 };
@@ -84,7 +89,8 @@ var Resume = () => (0, _preact.h)(_preact.Fragment, null, (0, _preact.h)(ResumeS
 }, _data.WorkExperience.map((_ref5) => {
   var [company, roles] = _ref5;
   return (0, _preact.h)(ResumeEntry, {
-    subtitle: company
+    subtitle: company,
+    footnote: roles.length > 1 ? (0, _utils.getRoleLength)(roles[1].timeframe[0], roles[0].timeframe[1]) : undefined
   }, (0, _preact.h)("ul", {
     className: styles.ResumeEntryDetails
   }, roles.length > 1 ? (0, _preact.h)("li", null, roles.map(role => (0, _preact.h)("ul", null, (0, _preact.h)(Role, role)))) : (0, _preact.h)(Role, roles[0])));

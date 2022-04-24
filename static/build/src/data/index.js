@@ -92,39 +92,49 @@ var SocialLinks = [['Github', 'https://www.github.com/JeffLuong'], ['Codepen', '
 exports.SocialLinks = SocialLinks;
 var Photos = [['Film', ['/static/img/photography/film/NYalley-thumb.jpg', '/static/img/photography/film/Flatiron-thumb.jpg', '/static/img/photography/film/Venice-thumb.jpg', '/static/img/photography/film/StPeter-thumb.jpg', '/static/img/photography/film/Bernini-thumb.jpg', '/static/img/photography/film/Isabel-thumb.jpg']], ['Digital', ['/static/img/photography/experimental/Jeff-thumb.jpg', '/static/img/photography/experimental/Doro-thumb.jpg', '/static/img/photography/experimental/Michael-thumb.jpg', '/static/img/photography/experimental/Isabel-thumb.jpg', '/static/img/photography/experimental/DrawingHands-thumb.jpg', '/static/img/photography/experimental/Ponzu-thumb.jpg', '/static/img/photography/experimental/Spheres-thumb.jpg', '/static/img/photography/experimental/VicenzaCathedral-thumb.jpg', '/static/img/photography/experimental/Windmills-thumb.jpg']]];
 exports.Photos = Photos;
-var WorkExperience = [['Better.com', [{
-  role: 'Front End Engineer',
-  description: 'Working in the Borrower Experience Team to improve the mortgage application process for everyone.',
+var WorkExperience = [['GoFundMe', [{
+  role: 'Senior Front End Engineer',
+  description: 'Working on internationalization with a focus on charities in the European market.',
+  location: "".concat(_utils.States.NY, " (Remote)"),
+  timeframe: [new Date(2022, 3), new Date(Date.now())],
+  current: true
+}]], ['Better.com', [{
+  role: 'Software Engineer V (Front End)',
+  description: 'Worked on Purchase and Cash Offer Program flows to improve the home buying process for everyone.',
   location: _utils.States.NY,
-  timeframe: "".concat(_utils.Months[7], " 2020 - Present")
+  timeframe: [new Date(2021, 2), new Date(2022, 3)]
+}, {
+  role: 'Software Engineer IV (Front End)',
+  location: _utils.States.NY,
+  timeframe: [new Date(2020, 6), new Date(2021, 2)]
 }]], ['Button', [{
   role: 'Front End Engineer',
   description: 'Built and maintained usebutton.com. Also worked on maintenance and upgrades on various front end web applications.',
   location: _utils.States.NY,
-  timeframe: "".concat(_utils.Months[12], " 2019 \u2013 ").concat(_utils.Months[5], " 2020")
+  timeframe: [new Date(2019, 11), new Date(2020, 5)]
 }, {
   role: 'Web Developer',
   location: _utils.States.NY,
-  timeframe: "".concat(_utils.Months[6], " 2018 \u2013 ").concat(_utils.Months[12], " 2019")
+  timeframe: [new Date(2018, 5), new Date(2019, 11)]
 }]], ['Vestorly', [{
   role: 'Software Engineer',
   description: 'Used Ember.js, SASS, Handlebars and other front end frameworks to design and build components for Vestorly web apps.',
   location: _utils.States.NY,
-  timeframe: "".concat(_utils.Months[3], " 2017 - ").concat(_utils.Months[6], " 2018")
+  timeframe: [new Date(2017, 2), new Date(2018, 5)]
 }, {
   role: 'Software Engineer and Designer',
   location: _utils.States.NY,
-  timeframe: "".concat(_utils.Months[10], " 2015 - ").concat(_utils.Months[3], " 2017")
+  timeframe: [new Date(2015, 9), new Date(2017, 2)]
 }]], ['General Assembly', [{
   role: 'Web Developer',
   description: 'Full stack development using HTML5, CSS, Javascript, jQuery, Node.js, MongoDB, Ruby & Rails, PostgreSQL.',
   location: _utils.States.NY,
-  timeframe: "".concat(_utils.Months[5], " 2015 - ").concat(_utils.Months[8], " 2015")
+  timeframe: [new Date(2015, 4), new Date(2015, 7)]
 }]], ['Wid Chapman Architects', [{
   role: 'Associate Project Manager',
   description: 'Design development and project management for multiple hospitality, commercial and residential projects.',
   location: _utils.States.NY,
-  timeframe: "".concat(_utils.Months[4], " 2012 - ").concat(_utils.Months[4], " 2015")
+  timeframe: [new Date(2012, 3), new Date(2015, 3)]
 }]]];
 exports.WorkExperience = WorkExperience;
 var Education = [['Pratt Institute', [{
