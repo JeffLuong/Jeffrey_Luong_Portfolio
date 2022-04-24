@@ -37,10 +37,10 @@ var getRoleLength = (start, end) => {
   if (months >= 12) {
     var yrs = Math.floor(months / 12);
     var mos = months % 12;
-    return "".concat(yrs, " yrs").concat(mos > 0 ? " ".concat(mos, " mos") : '');
+    return "".concat(yrs, " yrs").concat(mos > 0 ? " ".concat(mos, " ").concat(mos > 1 ? 'mos' : 'mo') : '');
   }
 
-  return months <= 1 ? '1 mos' : "".concat(months, " mos");
+  return months <= 1 ? '1 mo' : "".concat(months, " mos");
 };
 
 exports.getRoleLength = getRoleLength;
