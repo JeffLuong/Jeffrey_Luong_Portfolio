@@ -52,12 +52,6 @@ export const FeaturedWork = [
     tech: ['Javascript', 'JQuery', 'Node.js', 'Express', 'HTML5/CSS3'],
     url: 'http://www.huesquare.com/'
   }, {
-    name: 'Isabel Chen Fashion',
-    img: '/static/img/work/isabelchen.jpg',
-    description: 'Portfolio website for fashion designer Isabel QZ Chen. Worked with client on layout and interaction designs.',
-    tech: ['Javascript', 'JQuery', 'Node.js', 'Express', 'HTML5/CSS3'],
-    url: 'http://www.isabelqzchen.com/'
-  }, {
     name: 'Weather Now',
     img: '/static/img/work/w-now.jpg',
     description: 'Animated weather conditions based on your geo-location. Utilized <strong>FreeGeoIP</strong> for IP based geo location and <strong>OpenWeather API</strong> for weather conditions based on location.',
@@ -110,8 +104,8 @@ export const Photos = [
 export const WorkExperience = [
   ['GoFundMe', [
     {
-      role: 'Senior Front End Engineer',
-      description: 'Working on internationalization with a focus on charities in the European market.',
+      role: 'Senior Software Engineer',
+      description: 'Working on localization of products with a focus on charity features in the European market.',
       location: `${States.NY} (Remote)`,
       timeframe: [new Date(2022, 3), new Date(Date.now())],
       current: true
