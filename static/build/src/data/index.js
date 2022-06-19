@@ -63,12 +63,6 @@ var FeaturedWork = [{
   tech: ['Javascript', 'JQuery', 'Node.js', 'Express', 'HTML5/CSS3'],
   url: 'http://www.huesquare.com/'
 }, {
-  name: 'Isabel Chen Fashion',
-  img: '/static/img/work/isabelchen.jpg',
-  description: 'Portfolio website for fashion designer Isabel QZ Chen. Worked with client on layout and interaction designs.',
-  tech: ['Javascript', 'JQuery', 'Node.js', 'Express', 'HTML5/CSS3'],
-  url: 'http://www.isabelqzchen.com/'
-}, {
   name: 'Weather Now',
   img: '/static/img/work/w-now.jpg',
   description: 'Animated weather conditions based on your geo-location. Utilized <strong>FreeGeoIP</strong> for IP based geo location and <strong>OpenWeather API</strong> for weather conditions based on location.',
@@ -93,8 +87,8 @@ exports.SocialLinks = SocialLinks;
 var Photos = [['Film', ['/static/img/photography/film/NYalley-thumb.jpg', '/static/img/photography/film/Flatiron-thumb.jpg', '/static/img/photography/film/Venice-thumb.jpg', '/static/img/photography/film/StPeter-thumb.jpg', '/static/img/photography/film/Bernini-thumb.jpg', '/static/img/photography/film/Isabel-thumb.jpg']], ['Digital', ['/static/img/photography/experimental/Jeff-thumb.jpg', '/static/img/photography/experimental/Doro-thumb.jpg', '/static/img/photography/experimental/Michael-thumb.jpg', '/static/img/photography/experimental/Isabel-thumb.jpg', '/static/img/photography/experimental/DrawingHands-thumb.jpg', '/static/img/photography/experimental/Ponzu-thumb.jpg', '/static/img/photography/experimental/Spheres-thumb.jpg', '/static/img/photography/experimental/VicenzaCathedral-thumb.jpg', '/static/img/photography/experimental/Windmills-thumb.jpg']]];
 exports.Photos = Photos;
 var WorkExperience = [['GoFundMe', [{
-  role: 'Senior Front End Engineer',
-  description: 'Working on internationalization with a focus on charities in the European market.',
+  role: 'Senior Software Engineer',
+  description: 'Working on localization of products with a focus on charity features in the European market.',
   location: "".concat(_utils.States.NY, " (Remote)"),
   timeframe: [new Date(2022, 3), new Date(Date.now())],
   current: true
