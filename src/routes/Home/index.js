@@ -17,7 +17,7 @@ const Home = ({ path }) => (
         </AnimatedText>
         <AnimatedLine />
         <AnimatedText TagName="h2" animationType="slide-in" className={styles.HeroSubText} delay={1000}>
-          Front End / UI Engineer
+          Senior Front End / UI Engineer
         </AnimatedText>
       </div>
     </Section>
