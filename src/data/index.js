@@ -58,12 +58,6 @@ export const FeaturedWork = [
     tech: ['Javascript', 'JQuery', 'AngularJS', 'Node.js', 'Express', 'HTML5/CSS3'],
     url: 'http://w-now.herokuapp.com/'
   }, {
-    name: 'WikiArticles',
-    img: '/static/img/work/wiki-articles.jpg',
-    description: 'Simple wiki-style CRUD application with a minimalist design.',
-    tech: ['Javascript', 'JQuery', 'Node.js', 'Express', 'MongoDB', 'HTML5/CSS3'],
-    url: 'https://ga-wikiarticles.herokuapp.com/'
-  }, {
     name: 'JACK.',
     img: '/static/img/work/jack.jpg',
     description: 'A Black Jack game with clean design and slick CSS animations.',
